@@ -1,0 +1,29 @@
+{
+  "panel": {
+    "header": "Dashboards",
+    "options": "Options"
+  },
+  "disruptions": {
+    "addMeasureReport": "Maßnahmenbericht hinzufügen",
+    "editMeasureReport": "Maßnahmenbericht bearbeiten"
+  },
+  "paretoFilter": {
+    "titleDuration": "Störungen nach Dauer (in Minuten)",
+    "titleFrequency": "Störungen nach Häufigkeit",
+    "occurrences": "Mal",
+    "disruption": "Störung",
+    "overallDuration": "Gesamtdauer (min)",
+    "overallFrequency": "Gesamthäufigkeit",
+    "clearAll": "Alle löschen",
+    "nothingSelectedMessage": "Bitte auswählen...",
+    "noDataMessage": "Es sind keine Daten zu den gewählten Filterkriterien verfügbar. Versuchen Sie, einige Filter zu entfernen, um mehr Ergebnisse zu sehen.",
+    "startDate": "Wählen Sie ein Startdatum",
+    "endDate": "Wählen Sie ein Enddatum",
+    "by": "Filtern nach {{value}}",
+    "shifts": "Schicht",
+    "unitIds": "Anlagen",
+    "disruptionCategories": "Störungskategorie",
+    "disruptionDescriptions": "Störungbeschreibung",
+    "disruptionTypes": "Art d. Maschinenstörung:"
+  }
+}

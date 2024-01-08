@@ -1,0 +1,23 @@
+{
+  "version": "1",
+  "region": "eu-west-1",
+  "userPoolId": "eu-west-1_cwcxE8mAU",
+  "userName": "iprocess.dpp.admin.dev",
+  "callerContext": {
+    "awsSdkVersion": "aws-sdk-unknown-unknown",
+    "clientId": "r0r34p51kqcfris6gh4audp7h"
+  },
+  "triggerSource": "PreAuthentication_Authentication",
+  "request": {
+    "userAttributes": {
+      "sub": "6a15f391-0206-46fe-8541-5f9270ce8f9b",
+      "custom:subdepartment": "MaibornWolff",
+      "cognito:user_status": "CONFIRMED",
+      "email_verified": "true",
+      "preferred_username": "iprocess.dpp.admin.dev",
+      "email": "clemens.wickboldt@maibornwolff.de"
+    },
+    "validationData": {}
+  },
+  "response": {}
+}

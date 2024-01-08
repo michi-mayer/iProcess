@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.shared.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "downlevelIteration": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["vite/client", "vite-plugin-svgr/client"],
+    "jsx": "react-jsx",
+    "baseUrl": "./src/",
+    "paths": {
+      "theme": ["theme.tsx"]
+    }
+  },
+  "include": ["src", "vitest-setup.ts"],
+  "exclude": ["src/tests/cypress", "node_modules/", "**/*.spec.ts", "vite.config.ts"]
+}

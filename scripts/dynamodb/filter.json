@@ -1,0 +1,12 @@
+
+{
+  "FilterExpression": "#createdAt >= :dateTimeUTC and attribute_exists(unitId)",
+  "ExpressionAttributeNames": {
+    "#createdAt": "createdAt"
+  },
+  "ExpressionAttributeValues": {
+    ":dateTimeUTC": {
+      "S": "2022-01-01T00:00:00.000Z"
+    }
+  }
+}

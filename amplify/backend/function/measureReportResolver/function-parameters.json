@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "api": {
+      "erfassungsapp": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "iProcessLambdaShared",
+      "env": "develop",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true
+    }
+  ],
+  "environmentVariableList": []
+}

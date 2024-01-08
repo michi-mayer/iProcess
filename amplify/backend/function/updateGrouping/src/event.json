@@ -1,0 +1,10 @@
+{
+  "put": {
+    "id": "19d07405-33a7-4eca-9ff9-78bf7de342a8",
+    "name": "Sprinfgield assembly line factory",
+    "unitsIds": [
+      "a8b00159-6e01-431f-a8dd-16ca52eaa889"
+    ],
+    "subDepartmentIds": []
+  }
+}

@@ -1,0 +1,14 @@
+mutation MyMutation {
+  createDisruption(input: {deleted: no, description: "New Card by YOUR NAME", disLocation: "Category 1", disLocationSpecification: "C1 Reason 2", duration: "00:05", endTimeDateUTC: "2022-11-08T12:50:00.000Z", measures: "Test by AppSync", partId: "62bd3711-5383-425e-8a2c-ddd2d727b94a", segmentId: "00000000-0000-0000-0000-000000000000", startTimeDateUTC: "2022-11-08T12:45:00.000Z", template: yes, timeZone: "Europe/Madrid", unitId: "7cd0c408-e619-41ee-be66-54317aaf411e"}) {
+    id
+  }
+}
+
+mutation MyMutation {
+  createDisruption(input: {deleted: no, description: "New Card by YOUR NAME", disLocation: "Category 1", disLocationSpecification: "C1 Reason 2", duration: "00:05", endTimeDateUTC: "2022-11-08T12:50:00.000Z", measures: "Test by AppSync", partId: "2ab86350-0e90-4028-979c-2b55d264e43a", segmentId: "00000000-0000-0000-0000-000000000000", startTimeDateUTC: "2022-11-08T12:45:00.000Z", template: yes, timeZone: "Europe/Madrid", unitId: "cd2bb9bb-b16c-4dac-be5e-c864cb3ffdc5"}) {
+    id
+  }
+}
+
+
+

@@ -1,0 +1,5 @@
+{
+  "apiGraphQLAPIIdOutput": {
+    "Fn::GetAtt": ["apierfassungsapp", "Outputs.GraphQLAPIIdOutput"]
+  }
+}

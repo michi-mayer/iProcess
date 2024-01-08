@@ -1,0 +1,421 @@
+[
+  {
+    "author": "Admin",
+    "date": "01/01/2099",
+    "version": "v99.1.0-0",
+    "changes": [],
+    "fixes": []
+  },
+  {
+    "author": "Admin",
+    "date": "12/20/2023",
+    "version": "v23.51.6-3",
+    "changes": [
+      "Dashboard: Gemeldete Störungen können anhand anderen Teams eingesehen werden",
+      "Allgemein: Buttons in den Dialogen wurden angeglichen",
+      "Startseite: Nutzer können nur noch Grupppierungen einsehen, die ihrer Abteilung zugeordnet sind",
+      "Produktion: Die anwesende Schicht kann beim Start einer Schicht angegeben werden",
+      "Admin: Gleiche Kürzel können für Einheiten, beim Erzeugen neuer Konfigurationen, ausgewählt werden",
+      "Produktion: Der Dialog zur Anzeige einer Störung stellt die Informationen nun besser dar."
+    ],
+    "fixes": [
+      "Produktionsanlage: Es ist möglich, die Anzahl der Ausschüsse zu verringern.",
+      "Produktion: Der Störungsdialog ist angepasst, sodass sich die Breite des Dialogs und die Position der Chips nicht mehr ungewollt ändern.",
+      "Produktion: Im Dialog zur Störungsbearbeitung hat der Dialogtitel nun einen Abstand zum Störungsnamen."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "11/30/2023",
+    "version": "v23.48.5-4",
+    "changes": [
+      "Sicherheit: Die API-Endpunkte sind auf die Rechte der zugewiesenen Rollen beschränkt.",
+      "Produktion: Anlagen werden als 'verbunden' in der seitlichen Navigationsleiste angezeigt.",
+      "Produktion: Die Berechnung der tatsächlichen Anzahl wurde für die an Maschinen angeschlossenen Einheiten geändert.",
+      "Dashboard Shopfloor: Morgens, nachmittags und abends sind jetzt sichtbar.",
+      "Dashboard Shopfloor: Nur Teams anzeigen, die Teil einer Anlage sind."
+    ],
+    "fixes": [
+      "Produktion: Teams im Tab 'Gemeldete Störungen' im Bereich 'Stör. Vorherige Teams' können gefiltert werden.",
+      "Produktion: Suchfeld für Störungen wird jetzt auf der richtigen Registerkarteangezeigt.",
+      "Dashboard Shopfloor: Störungen werden korrekt mit actualcount verknüpft.",
+      "Dashboard: Korrekte Einbindung von Quicksight-Dashboards."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "11/14/2023",
+    "version": "v23.46.3-4",
+    "changes": [
+      "Produktion: Aktuelle Stückzahl wird aus den Maschinen ausgelesen.",
+      "Produktion: Es können Informationen zu gemeldeten Störungen angezeigt werden.",
+      "Dashboard: NULL Wert wird im Dashboard nicht mehr angezeigt."
+    ],
+    "fixes": [
+      "Produktion: Störungen von vorhergehenden Teams sind suchbar.",
+      "Produktion: Chips sind wieder klickbar wenn Kategorie und Ursache den gleichen Namen enthalten.",
+      "Team-Monitor: Zyklus-Störungen erscheinen wieder im Team Monitor.",
+      "Dashboard: Es werden wieder Daten für die vorherige Schicht angezeigt."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "11/02/2023",
+    "version": "v23.44.5-8",
+    "changes": [
+      "Shop floor Dashboard: Neuer Team-Filter.",
+      "Langzeitdashboard: m100 Nummer Verfügbar.",
+      "Dashboard: Labels und Tooltips sind jetzt auf Deutsch.",
+      "Produktion: Autocomplete-Funktion für Maßnahmen im Störungsdialog.",
+      "Produktion: Unterschiedliche Filter werden bei Mein Team und Vorheriges Team angewandt."
+    ],
+    "fixes": [
+      "Produktion: QRK Vorlagen von alten Tams sind wieder auffindbar.",
+      "Langzeitdashboard: Störungen werden wieder im Langzeitdashboard korrekt angezeigt.",
+      "Shop floor Dashboard: Zeit und Dauer werden wieder korrekt angezeigt.",
+      "Produktion: Autovervollständigung für Maßnahmen funktioniert wieder.",
+      "Produktion: Zähler für sonstige Störungen filtert nach ausgewähltem Team.",
+      "Produktion: Sonstige Störung kann nicht mehr als Vorlage angelegt werden.",
+      "Dashboard: Wochen werden für OEE korrekt angezeigt.",
+      "Maßnahmen: Beim Erstellen einer Maßnahme wird nicht mehr neu geladen."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "10/23/2023",
+    "version": "v23.43.0-2",
+    "changes": [],
+    "fixes": [
+      "Produktion: Standardnutzer können jetzt gemeldete Störungen des jeweils ausgewählten Teams sehen.",
+      "Produktion: Störungen mit einer Startzeit um 00:00 Uhr können jetzt wieder erstellt werden."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "10/20/2023",
+    "version": "v23.42.4-4",
+    "changes": [
+      "Team Monitor: Es werden jetzt Störungen des eigenen Teams und der nachfolgenden Teams angezeigt. Außerdem ist die M100 Nummer in der Tabelle mit Störungen zu finden.",
+      "Produktion: Es gibt jetzt eine Möglichkeit Details zu einer gemeldeten Störung anzuzeigen.",
+      "Produktion: Beim Melden einer Störung gibt es für Maßnahmen jetzt eine Funktion zur Autovervollständigung. Diese basiert auf allen gemeldeten Maßnahmen der jeweiligen Anlage.",
+      "Dashboard: Die Problem Spezifikation ist jetzt auch auf dem Dashboard sichtbar."
+    ],
+    "fixes": [
+      "Maßnahmen: Beim Erstellen eines Maßnahmenberichts verschwinden die bereits eingegebenen Daten jetzt nicht mehr.",
+      "Dashboard: Falsche Spalten-Bezeichnungen für das Shopfloor Dashboard wurden korrigiert.",
+      "Dashboard: Die Bezeichnung der X-Achse im Pareto-Diagramm stimmt nun mit dem entsprechenden Tooltip überein.",
+      "Dashboard: Sowohl das Langzeit-Dashboard, als auch das Shopfloor-Dashboard zeigen jetzt wieder alle Störungen an."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "10/06/2023",
+    "version": "v23.40.3-0",
+    "changes": [
+      "Produktion: Als Manager oder Admin kann man jetzt unterschiedliche Störungsvorlagen-Filter für das eigene Team und vorangegangene Teams setzen.",
+      "Dashboard: Ein neues Dashobard für den Shopfloor wurde hinzugefügt.",
+      "Admin: Falls Maschinen verfügbar sind, können diese nun mit Anlagen in i.Process verknüpft werden."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "09/26/2023",
+    "version": "v23.39.0-1",
+    "fixes": [
+      "Die m100-Nummer ist jetzt optional."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "09/22/2023",
+    "version": "v23.38.5-7",
+    "changes": [
+      "Produktion: Es ist jetzt möglich, einen Status für Störungen zu setzen.",
+      "Produktion: Beim Melden einer Störung kann jetzt die M100 Nummer angegeben werden.",
+      "Produktion: Der Filter 'Alle Störungen' zeigt nun nur noch Störungsvorlagen des Teams an.",
+      "Produktion: Störungsvorlagen unter 'Mein Team' und 'Vorangegangene Teams' können nun priorisiert werden.",
+      "Produktion: Beim Erstellen von QRK-Vorlagen gibt es nun eine Autovervollständigung für die Beschreibung der Vorlage."
+    ],
+    "fixes": [
+      "Bei einer Stückzahl von 0 wird jetzt wieder die korrekte Differenz angegeben.",
+      "Das Erstellen und Editieren von neuen Maßnahmen funktioniert wieder korrekt.",
+      "Das Öffnen eines Dialogs in Produktion führt nicht mehr dazu, dass Teile der URL entfernt werden.",
+      "Admin: Wenn eine Anlage gelöscht wird, ist die damit verbundene Gruppierung nun wieder sichtbar.",
+      "Es passiert nicht mehr, dass der Inhalt des Störungs-Dialogs verschwindet, während eine Störung erstellt oder editiert wird.",
+      "Team Monitor: Standardnutzer sehen jetzt wieder alle entsprechenden Teams im Dropdown.",
+      "In Produktion und im Team Monitor wurden UI Verbesserungen vorgenommen."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "09/14/2023",
+    "version": "v23.37.0-1",
+    "fixes": [
+      "Das Erstellen und Bearbeiten von Maßnahmen funktioniert wieder."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "09/04/2023",
+    "version": "v23.36.0-1",
+    "fixes": [
+      "Im Admin werden wieder alle Takte/Stationen pro Team angezeigt."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "08/31/2023",
+    "version": "v23.35.9-1",
+    "changes": [
+      "Team Monitor: Der Nutzer kann für alle Montagelinien die Gruppierung und Anlage auswählen.",
+      "Team Monitor: Falls keine Schicht gestartet wurde erscheint eine entsprechende Fehlermeldung.",
+      "Team Monitor: Der Nutzer kann sein Team in der oberen Leiste auswählen.",
+      "Team Monitor: Der Nutzer sieht eine Zusammenfassung mit Kennzahlen der aktuellen Schicht.",
+      "Team Monitor: Die Top 5 Störungen der aktuellen Schicht werden als Balkendiagramm angezeigt.",
+      "Team Monitor: Die Top 3 Störungen der vorherigen Schicht werden als Balkendiagramm angezeigt.",
+      "Team Monitor: In einer Tabelle werde alle an das Team gemeldeten Störungen angezeigt.",
+      "Team Monitor: Alle Störungen die in den letzten 5 Minuten gemeldet oder angepasst wurden, werden mit einem roten Punkt markiert.",
+      "Team Monitor: Die Anzahl der an das Team gemeldeten Störungen wird summiert angezeigt."
+    ],
+    "fixes": [
+      "Im Pareto Diagram werden die  Störungsnamen korrekt angezeigt "
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "08/25/2023",
+    "version": "v23.34.0-2",
+    "fixes": [
+      "OEE Daten werden wieder angezeigt.",
+      "Performance-Verbesserungen für Navigation und Suche der Störungsvorlagen."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "08/09/2023",
+    "version": "v23.32.10-2",
+    "changes": [
+      "In i.Process Admin können für Montagelinien jetzt Teams angelegt werden.",
+      "Bei Montagelinien kann man in i.Process Produktion das entsprechende Team auswählen.",
+      "QRK können bei Montagelinien eine Störung für ein vorangegangenes Team anlegen.",
+      "Beim Anlegen einer Störungsvorlage für ein vorangegangenes Team kann das verursachende Team festgelegt werden.",
+      "i.Process Produktion zeigt jetzt die Störungsvorlagen von vorangegangenen Teams an.",
+      "Beim Anlegen einer Störung für ein vorangegangenes Team werden sowohl das verursachende Team, als auch das berichtende Team angezeigt.",
+      "Störungsvorlagen von vorangegangenen Teams zeigen das verursachende Team und einen Zähler der gesamten Störungen an.",
+      "Die Suchfunktion für Störungsvorlagen zeigt jetzt auch Störungsvorlagen vorangegangener Teams an.",
+      "Auf der i.Process Startseite wurde eine Kachel 'Team Monitor' hinzugefügt.",
+      "Störungsvorlagen können jetzt bearbeitet werden."
+    ],
+    "fixes": [
+      "Ein Fehler hinsichtlich des Zählers für 'Sonstige Störungen' wurde behoben.",
+      "Die Daten im Pareto-Diagramm werden wieder angezeigt."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "07/27/2023",
+    "version": "v23.30.4-1",
+    "changes": [
+      "Im Bereich 'Störung melden' kann nun der Filter 'Alle Störungen' ausgewählt und auf die Störungsvorlagen angewendet werden.",
+      "Admins und Manager können jetzt Störungsvorlagen priorisieren.",
+      "Beim Melden einer Störung können Fotos hinzugefügt werden.",
+      "Fotos einer Störung können heruntergeladen werden."
+    ],
+    "fixes": [
+      "OEE Daten werden wieder angezeigt."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "07/14/2023",
+    "version": "v23.28.4-3",
+    "changes": [
+      "Es gibt jetzt eine Suchfunktion für Störungsvorlagen.",
+      "Beim Anlegen von neuen Störungsvorlagen können Problem-Spezifikationen definiert werden.",
+      "Problem-Spezifikationen können beim Erfassen von Störungen selektiert werden, wenn eine entsprechende Störungsvorlage verwendet wird.",
+      "Im Tab 'Störung melden' gibt es nun einen Info-Button mit Hinweisen zur Nutzung der Anwendung in diesem Bereich."
+    ],
+    "fixes": [
+      "Das Bearbeiten von Anlagen mit sehr vielen Takten/Stationen funktioniert nun deutlich flüssiger.",
+      "Ein Validierungs-Fehler beim Bearbeiten und Erstellen von Schichtmodellen wurde behoben.",
+      "Das Pareto-Diagramm zeigt nun wieder alle Daten an."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "06/30/2023",
+    "version": "v23.26.0-2",
+    "changes": [],
+    "fixes": [
+      "Kopierte Schichtmodelle werden jetzt standardmäßig auf 'inaktiv' gesetzt.",
+      "Ein Fehler bei der Validierung der Start- und Endzeit im Schichtkonfigurations-Dialog wurde behoben."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "06/16/2023",
+    "version": "v23.24.15-17",
+    "changes": [],
+    "fixes": [
+      "Das Starten der Nachtschicht ist wieder möglich."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "06/15/2023",
+    "version": "v23.24.15-16",
+    "changes": [],
+    "fixes": [
+      "i.Process funktioniert wieder auf Zebra Tablets."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "06/14/2023",
+    "version": "v23.24.15-15",
+    "changes": [
+      "Das Verhalten des Schichtmodell-Formulars in Admin wurde verbessert.",
+      "Die Tabelle für gemeldete Störungen wurde aktualisiert.",
+      "Die Spalten im Pareto-Diagramm sind nun neu sortiert.",
+      "Das melden von IST-Stückzahlen funktioniert nun auf Produktionsanlagen und Montagelinien gleichermaßen.",
+      "IST-Stückzahlen können nun unabhängig von vorherigen oder nachfolgenden Schichten gemeldet werden.",
+      "Das Starten und Zurücksetzen von Schichten ist nun bis zu 2 Schichten vor der aktuellen möglich.",
+      "Die Anzeige der Maßnahmenberichte lässt sich nun mit einem Filter einschränken.",
+      "Es ist nun möglich verlorene Teile im Störungs-Dialog anzugeben.",
+      "i.Process erkennt nun die im Browser eingestellte Sprache. Es sollte damit nicht mehr zu Problemen mit Übersetzungssoftware kommen.",
+      "Die Neuigkeiten sind nun aufgeteilt in einen Changelog aller Änderungen und ein Popup, das nur die aktuellen Änderungen zeigt.",
+      "Das Pareto-Diagramm lädt nun schneller.",
+      "Die Ausbringung pro Schicht wird nun schneller berechnet.",
+      "i.Process reagiert noch schneller auf Benutzereingaben.",
+      "Takte/Stationen können nun im Anlagen-Dialog sortiert werden.",
+      "Maßnahmenberichte können nun direkt vom Dashboard aus editiert werden."
+    ],
+    "fixes": [
+      "Bei vielen Störungsvorlagen laden diese nun zuverlässiger und schneller.",
+      "Ohne die entsprechenden Berechtigungen können Nutzer nicht mehr auf i.Process Apps zugreifen.",
+      "Ausschüsse werden nicht mehr fälschlicherweise in zwei Zeitslots gezählt.",
+      "Der Hersteller-Eintrag im Anlagen-Dialog kann nun entfernt werden.",
+      "Die Formvalidierung des Schichtmodelldialogs funktioniert nun zuverlässiger.",
+      "Takte/Stationen können nun für alle Anlagentypen gepflegt werden.",
+      "Das Kopieren eines Schichtmodells funktioniert nun wie erwartet.",
+      "Winter- und Sommerzeit sind nun korrekt im Dashboard abgebildet.",
+      "Das Löschen einer Anlage führt nun nicht mehr zu Problemen im Produkt-Dialog in Admin.",
+      "Die SOLL-Stückzahl wird nun korrekt berechnet.",
+      "Im Störungsdialog wird nun die aktuelle Zeit verwendet. Wird eine Störung für eine vergangene Stunde erstellt, wird die verganene Zeit verwendet.",
+      "Die Ausbringung wird nun korrekt berechnet.",
+      "Das Starten einer Schicht mit einem inaktiven Schichtmodell ist nicht mehr möglich.",
+      "Das Verwenden von Unterstrichen ist nun in allen Formularen möglich.",
+      "Wenn ein mittlerer Takte/Stationen-Eintrag an der Anlage entfernt wird, führt das nicht mehr zur Löschung mehrerer Einträge."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "02/24/2023",
+    "version": "v23.8.1-5",
+    "changes": [
+      "Der Zähler für Ausschussteile und Störungen bezieht sich nun auf die Schicht statt auf den ganzen VW Tag."
+    ],
+    "fixes": [
+      "Der Wechsel zwischen Anlagen führt nicht mehr zu fehlenden Werten",
+      "Montagelinien zeigen korrekte IST-Stückzahlen an",
+      "Neue Anlagen können einem Produkt zugeordnet werden, auch wenn bereits zugeordnete Anlagen gelöscht wurden.",
+      "Der Takte und Stationenfilter greift nun separat pro Anlage",
+      "Nach Aktualisierung eines Anlagennamens taucht diese unter neuem Namen im Dashboard auf. Alte Daten werden dem neuen Namen zugeordnet."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "02/16/2023",
+    "version": "v23.7.5-4",
+    "changes": [
+      "IST-Stückzahlen können für Montagelinien als Intervall gemeldet werden.",
+      "IST-Stückzahlen können nun über eine neue Tab-Navigation eingeben werden.",
+      "Ausschuss lässt sich über den Tab 'Stückzahlen' einsehen, bearbeiten und löschen.",
+      "Im Dashboard wird der Ausschussgrund bei der Auswertung angezeigt.",
+      "Das Dashboard kann mit einem Scrollbar bedient werden."
+    ],
+    "fixes": [
+      "Es können mehr als 100 Takte/Stationen in iProcess Admin eingeben werden.",
+      "Es können keine Anlagen ohne Namen mehr erstellt werden.",
+      "Störungen für vergangene Schichten werden korrekt angezeigt.",
+      "Maßnahmen können mit Drag & Drop auch auf dem Tablet repriorisiert werden."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "01/23/2023",
+    "version": "v23.4.3-1",
+    "changes": [
+      "Im Dashboard werden die Top 5 Störungen in je einem Pareto für Frequenz und Häufigkeit angezeigt.",
+      "Im Pareto Diagramm können Top Störungen ausgewählt und ein Maßnahmenbericht erstellt werden.",
+      "Eingegebene Störungen werden in Echtzeit aktualisiert - der Browser Refresh entfällt.·"
+    ],
+    "fixes": [
+      "Störungen werden im Dashboard der richtigen Schicht zugeordnet."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "01/05/2023",
+    "version": "v23.1.6-2",
+    "changes": [
+      "Die Sidebar für die i.Process Produktion hat die Möglichkeit minimiert zu werden.",
+      "Der zusätzliche Login für das Dashboard entfällt.",
+      "Das Login Formular wurde verschlankt.",
+      "Für eine Massnahme lässt sich nun eine Veratworliche Unterabteilung festlegen."
+    ],
+    "fixes": [
+      "Verbesserungen in der Anzeige Schicht-übergreifender Störungen.",
+      "Nun korrektes Verhalten der Sidebar nach Schließen eines Formulars."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "12/28/2022",
+    "version": "v22.52.7-4",
+    "changes": [
+      "Der Ausschuss und iO wird nun auch für die laufende Stunde angezeigt.",
+      "'Bauteil' wurde in 'Produkt' umbenannt."
+    ],
+    "fixes": [
+      "Störungen werden nun auch Stunden-übergreifend korrekt angezeigt.",
+      "Wenn im Admin kein Bild zur NiO Erfassung hochgeladen wird, wird in Production ein passendes Formular (ohne Bild) angeboten.",
+      "Die Zuordnung des Schichttypen wurde korrigiert und sollte für zukünftige Erfassungen korrekt im Dashboard angezeigt werden.",
+      "OEE Werte werden im Dashboard nun auch für Performance und Qualität angezeigt."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "12/14/2022",
+    "version": "v22.50.7-1",
+    "changes": [
+      "Das Dashboard kann nun die Störungen nach Schichttyp gruppieren (z. B. Frühschicht).",
+      "i.Process Production verwendet jetzt die Startzeit anstelle der Endzeit, wenn eine Störung gemeldet wird.",
+      "i.Process Admin kann nun nach 9 Produktionszeitfenstern einen Schichtwechsel hinzufügen."
+    ],
+    "fixes": [
+      "i.Process Admin zeigt nun wieder alle Anlagen."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "12/02/2022",
+    "version": "v22.48.0-4",
+    "changes": [],
+    "fixes": [
+      "Zählung von Ausschuss und von Störungen erfolgt nun unabhängig vom Tageswechsel. Ein Ausschuss oder eine Störung kann nun z.B. vor Mitternacht erfasst werden und wird nach Mitternacht immer noch in der 'Kachel' gezählt.",
+      "Bei der Montagelinie: Schichtkonfigurator berechnet SOLL Stückzahl nun korrekt, das heißt mit anteiliger Ausbringung.",
+      "Im Admin: In der Schichtkonfiguration kann in Nicht-Produktion-Zeiten keine Downtime mehr gesetzt werden.",
+      "Viele kleine Verbesserungen in der Darstellung."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "11/11/2022",
+    "version": "v22.45.0-1",
+    "changes": [],
+    "fixes": [
+      "Störungsvorlagen sind wieder sichtbar nachdem sie angelegt wurden."
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "author": "Admin",
+    "date": "02/11/2022",
+    "description": [
+      "Welcome to the pilot environment of i.Process, the digital process control panel. We are pleased to make the conception and development work of about 2 years available to you. By us we mean colleagues from plastics technology, the press shop and factory organization who have developed this application together with MaibornWolff.",
+      "You can already use and test the current version. But we are dependent on your feedback. We will keep you up to date here and communicate current updates and hotfixes. If you encounter any problems or have any comments, please let us know by using the feedback button.",
+      "We can already give you a small preview. At the moment we are working on the action management, which gives you the possibility to formulate actions directly to problems. Furthermore, it is the goal to be able to maintain tools of the plants, in order to determine possible dependencies to disturbances. Finally, we want to make it easier for you to make manual entries and will be dealing with the machine data connection to i.Process. This way, manufactured quantities can be recorded automatically and malfunctions can be communicated directly from the machines.",
+      "We hope you enjoy using i.Process and look forward to receiving your first feedback!",
+      "Your i.Process Development Team"
+    ]
+  }
+]

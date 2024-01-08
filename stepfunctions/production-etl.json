@@ -1,0 +1,532 @@
+{
+  "Comment": "This state machine triggers ETL jobs for iProcess.",
+  "StartAt": "Start Crawler production",
+  "States": {
+    "Start Crawler production": {
+      "Type": "Task",
+      "Parameters": {
+        "Name": "production"
+      },
+      "Resource": "arn:aws:states:::aws-sdk:glue:startCrawler",
+      "Next": "Glue Start JobRun production-overwrite",
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.TaskFailed"
+          ],
+          "Next": "Glue Start JobRun production-overwrite"
+        }
+      ]
+    },
+    "Glue Start JobRun production-overwrite": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startJobRun.sync",
+      "Parameters": {
+        "JobName": "production-overwrite"
+      },
+      "Next": "Parallel"
+    },
+    "Parallel": {
+      "Type": "Parallel",
+      "Branches": [
+        {
+          "StartAt": "Glue DataBrew Start JobRun prod-disruption",
+          "States": {
+            "Glue DataBrew Start JobRun prod-disruption": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::databrew:startJobRun.sync",
+              "Parameters": {
+                "Name": "prod-disruption"
+              },
+              "Next": "UpdateDataSet disruption"
+            },
+            "UpdateDataSet disruption": {
+              "Type": "Task",
+              "Parameters": {
+                "AwsAccountId": "125228582851",
+                "DataSetId": "d60e5a8d-163c-45db-9f3c-fa4984bcf019",
+                "ImportMode": "SPICE",
+                "Name": "disruption",
+                "PhysicalTableMap": {
+                  "Key": {
+                    "RelationalTable": {
+                      "DataSourceArn": "arn:aws:quicksight:eu-west-1:125228582851:datasource/bab746dd-c378-4dee-8c16-8e3c53230a73",
+                      "Catalog": "AwsDataCatalog",
+                      "Schema": "athena",
+                      "Name": "disruption",
+                      "InputColumns": [
+                        {
+                          "Name": "partname",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "partnumber",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "partid",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "template",
+                          "Type": "BOOLEAN"
+                        },    
+                        {
+                          "Name": "dislocationtype",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "timezone",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "description",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "dislocationspecification",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "templateid",
+                          "Type": "STRING"
+                        },   
+                        {
+                          "Name": "starttimedateutc",
+                          "Type": "DATETIME"
+                        },                 
+                        {
+                          "Name": "starttimedatelocal",
+                          "Type": "DATETIME"
+                        },             
+                        {
+                          "Name": "starttimedatelocalvwday",
+                          "Type": "DATETIME"
+                        },                 
+                        {
+                          "Name": "duration",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "createdat",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "measures",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "deleted",
+                          "Type": "BOOLEAN"
+                        },                
+                        {
+                          "Name": "segmentid",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "unitid",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "id",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "endtimedateutc",
+                          "Type": "DATETIME"
+                        },     
+                        {
+                          "Name": "endtimedatelocal",
+                          "Type": "DATETIME"
+                        },                 
+                        {
+                          "Name": "endtimedatelocalvwday",
+                          "Type": "DATETIME"
+                        },                 
+                        {
+                          "Name": "duration_minutes",
+                          "Type": "INTEGER"
+                        },                
+                        {
+                          "Name": "dislocation",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "updatedat",
+                          "Type": "DATETIME"
+                        },                 
+                        {
+                          "Name": "unitname",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "index",
+                          "Type": "DECIMAL"
+                        },              
+                        {
+                          "Name": "isactive",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "shifttype",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "shiftgerman",
+                          "Type": "STRING"
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              "Resource": "arn:aws:states:::aws-sdk:quicksight:updateDataSet",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "Glue DataBrew Start JobRun prod-defective",
+          "States": {
+            "Glue DataBrew Start JobRun prod-defective": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::databrew:startJobRun.sync",
+              "Parameters": {
+                "Name": "prod-defective"
+              },
+              "Next": "UpdateDataSet defective"
+            },
+            "UpdateDataSet defective": {
+              "Type": "Task",
+              "Parameters": {
+                "AwsAccountId": "125228582851",
+                "DataSetId": "4462fe06-f8a5-4b7a-b269-b05342c8ad64",
+                "ImportMode": "SPICE",
+                "Name": "defective",
+                "PhysicalTableMap": {
+                  "Key": {
+                    "RelationalTable": {
+                      "DataSourceArn": "arn:aws:quicksight:eu-west-1:125228582851:datasource/30a6561d-338f-4f64-9222-caadb26b9f91",
+                      "Catalog": "AwsDataCatalog",
+                      "Schema": "athena",
+                      "Name": "defective",
+                      "InputColumns": [
+                        {
+                          "Name": "datetimeutc",
+                          "Type": "DATETIME"
+                        },                 
+                        {
+                          "Name": "datetimelocal",
+                          "Type": "DATETIME"
+                        },                 
+                        {
+                          "Name": "datetimelocalvwday",
+                          "Type": "DATETIME"
+                        },                 
+                        {
+                          "Name": "unitname",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "partid",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "shift",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "shiftgerman",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "count",
+                          "Type": "INTEGER"
+                        },                
+                        {
+                          "Name": "timezone",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "partname",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "createdat",
+                          "Type": "DATETIME"
+                        },                 
+                        {
+                          "Name": "deleted",
+                          "Type": "BOOLEAN"
+                        },                
+                        {
+                          "Name": "unitid",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "partnumber",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "id",
+                          "Type": "STRING"
+                        },               
+                        {
+                          "Name": "updatedat",
+                          "Type": "DATETIME"
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              "Resource": "arn:aws:states:::aws-sdk:quicksight:updateDataSet",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "Glue DataBrew Start JobRun prod-actualcount",
+          "States": {
+            "Glue DataBrew Start JobRun prod-actualcount": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::databrew:startJobRun.sync",
+              "Parameters": {
+                "Name": "prod-actualcount"
+              },
+              "Next": "UpdateDataSet actualcount"
+            },
+            "UpdateDataSet actualcount": {
+              "Type": "Task",
+              "Parameters": {
+                "AwsAccountId": "125228582851",
+                "DataSetId": "2f38d670-a308-4034-83da-1145e0a5e2b0",
+                "ImportMode": "SPICE",
+                "Name": "actualcount",
+                "PhysicalTableMap": {
+                  "Key": {
+                    "RelationalTable": {
+                      "DataSourceArn": "arn:aws:quicksight:eu-west-1:125228582851:datasource/99c2324d-99a4-4789-86e1-50969aa88cc0",
+                      "Catalog": "AwsDataCatalog",
+                      "Schema": "athena",
+                      "Name": "actualcount",
+                      "InputColumns": [
+                        {
+                          "Name": "unitname",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "partid",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "shift",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "shiftgerman",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "timezone",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "type",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "partname",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "createdat",
+                          "Type": "DATETIME"
+                        },
+                        {
+                          "Name": "SOLL",
+                          "Type": "INTEGER"
+                        },
+                        {
+                          "Name": "unitid",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "datetimeendutc",
+                          "Type": "DATETIME"
+                        },
+                        {
+                          "Name": "endtimedatelocal",
+                          "Type": "DATETIME"
+                        },
+                        {
+                          "Name": "endtimedatelocalvwday",
+                          "Type": "DATETIME"
+                        },
+                        {
+                          "Name": "partnumber",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "configurationid",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "id",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "shiftmodelid",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "datetimestartutc",
+                          "Type": "DATETIME"
+                        },
+                        {
+                          "Name": "starttimedatelocal",
+                          "Type": "DATETIME"
+                        },
+                        {
+                          "Name": "starttimedatelocalvwday",
+                          "Type": "DATETIME"
+                        },
+                        {
+                          "Name": "updatedat",
+                          "Type": "DATETIME"
+                        },
+                        {
+                          "Name": "IST",
+                          "Type": "INTEGER"
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              "Resource": "arn:aws:states:::aws-sdk:quicksight:updateDataSet",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "Glue DataBrew Start JobRun prod-oee",
+          "States": {
+            "Glue DataBrew Start JobRun prod-oee": {
+              "Type": "Task",
+              "Resource": "arn:aws:states:::databrew:startJobRun.sync",
+              "Parameters": {
+                "Name": "prod-oee"
+              },
+              "Next": "UpdateDataSet oee",
+              "Catch": [
+                {
+                  "ErrorEquals": [
+                    "States.TaskFailed"
+                  ],
+                  "Next": "UpdateDataSet oee"
+                }
+              ]
+            },
+            "UpdateDataSet oee": {
+              "Type": "Task",
+              "Parameters": {
+                "AwsAccountId": "125228582851",
+                "DataSetId": "0f961307-839f-4f97-8610-718974187d20",
+                "ImportMode": "SPICE",
+                "Name": "oee",
+                "PhysicalTableMap": {
+                  "Key": {
+                    "RelationalTable": {
+                      "DataSourceArn": "arn:aws:quicksight:eu-west-1:125228582851:datasource/4e90ac4b-9d24-43c6-b101-f795e4bd362c",
+                      "Catalog": "AwsDataCatalog",
+                      "Schema": "athena",
+                      "Name": "oee",
+                      "InputColumns": [
+                        {
+                          "Name": "createdat",
+                          "Type": "DATETIME"
+                        },
+                        {
+                          "Name": "unitid",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "quality",
+                          "Type": "DECIMAL"
+                        },
+                        {
+                          "Name": "timezone",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "performance",
+                          "Type": "DECIMAL"
+                        },
+                        {
+                          "Name": "shifttype",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "availability",
+                          "Type": "DECIMAL"
+                        },
+                        {
+                          "Name": "updatedat",
+                          "Type": "DATETIME"
+                        },
+                        {
+                          "Name": "ist",
+                          "Type": "DECIMAL"
+                        },
+                        {
+                          "Name": "soll",
+                          "Type": "DECIMAL"
+                        },
+                        {
+                          "Name": "endtimedateutc",
+                          "Type": "DATETIME"
+                        },
+                        {
+                          "Name": "endtimedatelocal",
+                          "Type": "DATETIME"
+                        },
+                        {
+                          "Name": "endtimedatelocalvwday",
+                          "Type": "DATETIME"
+                        },
+                        {
+                          "Name": "starttimedateutc",
+                          "Type": "DATETIME"
+                        },
+                        {
+                          "Name": "starttimedatelocal",
+                          "Type": "DATETIME"
+                        },
+                        {
+                          "Name": "starttimedatelocalvwday",
+                          "Type": "DATETIME"
+                        },
+                        {
+                          "Name": "unitname",
+                          "Type": "STRING"
+                        },
+                        {
+                          "Name": "id",
+                          "Type": "STRING"
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              "Resource": "arn:aws:states:::aws-sdk:quicksight:updateDataSet",
+              "End": true
+            }
+          }
+        }
+      ],
+      "End": true
+    }
+  }
+}

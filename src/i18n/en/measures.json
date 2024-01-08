@@ -1,0 +1,95 @@
+{
+  "header": {
+    "overview": "Overview",
+    "newMeasureReport": "New Measure Report",
+    "measureReport": "Measure Report",
+    "discard": "Discard Input",
+    "save": "Save",
+    "createdByAndDate": "Created on {{date}}"
+  },
+  "attachements": {
+    "by": "by"
+  },
+  "disruptionDetails": {
+    "title": "Disruption details",
+    "description": "Information and attachments to the problem",
+    "disruption": "Disruption",
+    "product": "Product",
+    "unit": "Unit",
+    "cycleStation": "Cycle / Station",
+    "dateOfFirstOccurrence": "Date of first occurrence",
+    "duration": "Duration (Total)",
+    "classification": "Classification",
+    "notesTitle": "Notes about the incident",
+    "attachments": "Attachments",
+    "missingAttachments": "No attachments",
+    "notesPlaceholder": "Add some notes",
+    "download": "Download",
+    "uploadFile": "Upload File",
+    "errorUploadingFile": "Something went wrong uploading the files",
+    "wrongFormat": "Only formats *.jpg *.png o *.raw are allowed.",
+    "restore": "Restore"
+  },
+  "systematicProblemAnalysis": {
+    "title": "Systematic Problem Analysis",
+    "description": "Support for the derivation of measures",
+    "problemOverview": "Problem Overview",
+    "what": "What",
+    "whatSubTitle": "What is the main problem?",
+    "whatPlaceholder": "e.g. Main aspect from problem notes",
+    "when": "When",
+    "whenSubTitle": "When was the problem first observed?",
+    "where": "Where",
+    "whereSubTitle": "Where did the problem occur?",
+    "wherePlaceholder": "e.g. ML1, Stanze",
+    "prioritiseCauses": "Prioritise the causes",
+    "prioritiseCausesDescription": "Consider the dimensions: human, machine, material, environment, method",
+    "causeError": "Please complete the cause",
+    "causePlaceholder": "e.g Time Pressure"
+  },
+  "measures": {
+    "title": "Measures",
+    "description": "Actions to eliminate the problem",
+    "subTitle": "New Measure",
+    "descriptionTitle": "Description",
+    "descriptionError": "Please enter description",
+    "descriptionPlaceholder": "Detailed description",
+    "assigneeTitle": "Responsibility",
+    "assigneeError": "Please enter responsibility",
+    "assigneePlaceholder": "Assigns a sub-department responsible for the measure",
+    "noOptionsPlaceholder": "No options available",
+    "statusTitle": "Status",
+    "dueDateTitle": "Due Date",
+    "dueDateError": "Please enter a date",
+    "addNewMeasure": "Add New Measure",
+    "critical": "Critical"
+  },
+  "status": {
+    "described": "Measure described",
+    "defined": "Analysis completed, measure defined",
+    "planned": "Measure planned + decided",
+    "implemented": "Measure implemented",
+    "solved": "Measure effective / problem solved",
+    "unsolved": "Measure not effective / problem not solved"
+  },
+  "overview": {
+    "measureReportOverview": "Measure Report Overview",
+    "action": "Action",
+    "search": "Search"
+  },
+  "filter": {
+    "status": "Status",
+    "critical": "Critical",
+    "assignee": "Assignee",
+    "yes": "Yes",
+    "no": "No",
+    "open": "Open",
+    "inprogress": "In Progress",
+    "completed": "Completed",
+    "clearSearch": "Clear search"
+  },
+  "deleteMeasure": {
+    "title": "Delete Measure",
+    "confirmToDeleteText": "Are you sure you want to delete this measure? All related attachments will be permanently deleted."
+  }
+}

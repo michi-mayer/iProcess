@@ -1,0 +1,15 @@
+{
+  "inputEvent": {
+    "version": "0",
+    "id": "f8ae6282-857c-d653-15d9-fbaf03258651",
+    "detail-type": "Scheduled Event",
+    "source": "aws.events",
+    "account": "465477822022",
+    "time": "2023-01-10T19:26:55Z",
+    "region": "eu-west-1",
+    "resources": [
+      "arn:aws:events:eu-west-1:465477822022:rule/amplify-erfassungsapp-develop-6504-CloudWatchEvent-5WCOTGWYGOT9"
+    ],
+    "detail": {}
+  }
+}

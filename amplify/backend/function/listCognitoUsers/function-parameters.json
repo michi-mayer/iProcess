@@ -1,0 +1,19 @@
+{
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "iProcessLambdaShared",
+      "env": "develop",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true
+    }
+  ],
+  "environmentVariableList": [],
+  "permissions": {
+    "auth": {
+      "erfassungsapp373264a5": [
+        "read"
+      ]
+    }
+  }
+}

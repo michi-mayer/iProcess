@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0",
+  "private": true,
+  "description": "Packages shared amongst all lambda functions",
+  "dependencies": {
+    "@aws-lambda-powertools/idempotency": "1.17.0",
+    "@aws-lambda-powertools/logger": "1.17.0",
+    "@aws-lambda-powertools/metrics": "1.5.1",
+    "@aws-lambda-powertools/tracer": "1.5.1",
+    "@middy/core": "3.6.2",
+    "dayjs": "1.11.7",
+    "iprocess-shared": "../../opt/iprocess-shared",
+    "loglevel": "1.8.1",
+    "moment-timezone": "0.5.34",
+    "remeda": "1.14.0",
+    "ts-pattern": "5.0.5",
+    "zod": "3.20.6",
+    "uuid": "9.0.0"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules || true",
+    "build": "npm run clean && npm install --production=true"
+  }
+}

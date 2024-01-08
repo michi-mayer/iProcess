@@ -1,0 +1,71 @@
+{
+  "id": {
+    "S": "ac3baf55-832f-4758-abe1-6008af318c7f"
+  },
+  "createdAt": {
+    "S": "2022-12-12T12:56:17.553Z"
+  },
+  "updatedAt": {
+    "S": "2022-12-12T12:56:17.553Z"
+  },
+  "partId": {
+    "S": "4095703b-ad46-4808-a67b-622f465cf705"
+  },
+  "partName": {
+    "S": "E2E - Assembly Line"
+  },
+  "partNumber": {
+    "S": "E2E C-AL"
+  },
+  "quota": {
+    "N": "100"
+  },
+  "actualCount": {
+    "N": "90"
+  },
+  "unitId": {
+    "S": "772972ed-a827-4380-a3ae-7e557d4d9569"
+  },
+  "unitName": {
+    "S": "Assembly Line"
+  },
+  "unitActive": {
+    "S": "yes"
+  }
+}
+
+{
+  "id": {
+    "S": "b5c5bcfc-01ef-4766-a5a5-83d63d117eef"
+  },
+  "createdAt": {
+    "S": "2022-12-12T12:56:17.549Z"
+  },
+  "updatedAt": {
+    "S": "2022-12-12T12:56:17.549Z"
+  },
+  "partId": {
+    "S": "4095703b-ad46-4808-a67b-622f465cf705"
+  },
+  "partName": {
+    "S": "E2E - Assembly Line"
+  },
+  "partNumber": {
+    "S": "E2E C-AL"
+  },
+  "quota": {
+    "N": "120"
+  },
+  "actualCount": {
+    "N": "0"
+  },
+  "unitId": {
+    "S": "772972ed-a827-4380-a3ae-7e557d4d9569"
+  },
+  "unitName": {
+    "S": "Assembly Line"
+  },
+  "unitActive": {
+    "S": "no"
+  }
+}

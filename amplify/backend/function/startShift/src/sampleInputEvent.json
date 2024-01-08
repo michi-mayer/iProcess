@@ -1,0 +1,18 @@
+{
+  "arguments": {
+    "input": {
+      "unitId": "cd2bb9bb-b16c-4dac-be5e-c864cb3ffdc5",
+      "partId": "0ad51c5c-9e76-40c0-a9be-c9501ea02a43",
+      "shiftModelId": "1ca67de8-4cce-4b4a-bed7-d630a05adaef",
+      "shiftTarget": 10,
+      "shiftType": "morningShift",
+      "cycleTime": 45,
+      "speedMode": null,
+      "timeZone": "Europe/Berlin",
+      "timeRange": {
+        "startDateTime": "2023-06-15T06:30:00.000Z",
+        "endDateTime": "2023-06-15T14:30:00.000Z"
+      }
+    }
+  }
+}

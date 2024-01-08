@@ -1,0 +1,33 @@
+{
+  "arguments": {
+    "input": {
+      "unitId": "9ca88dfa-f81b-4be0-b867-adf3d5a93f25",
+      "shiftType": "nightShift",
+      "dateTimeStartUTC": "2023-06-25T21:30:00.000Z",
+      "dateTimeEndUTC": "2023-06-26T05:30:00.000Z",
+      "configurationIdsToDelete": ["fba50f3e-8cf6-451b-bed1-d17d20e36d35"],
+      "configurations": [
+        {
+          "validFrom": "21:30:00.000",
+          "validUntil": "03:30:00.000",
+          "partId": "fe42a219-c135-4df6-ae7a-b8a5dbda6216",
+          "shiftModelId": "2e2a46ec-1e5e-4d6b-83e3-bd3c328f6306",
+          "cycleTime": 39.13,
+          "speedMode": 1,
+          "timeZone": "Europe/Madrid",
+          "unitType": "productionUnit"
+        },
+        {
+          "validFrom": "03:30:00.000",
+          "validUntil": "05:30:00.000",
+          "partId": "fe42a219-c135-4df6-ae7a-b8a5dbda6216",
+          "shiftModelId": "ad67ae55-3c99-40ad-8c9b-65eb0baca4c4",
+          "cycleTime": 39.13,
+          "speedMode": 1,
+          "timeZone": "Europe/Madrid",
+          "unitType": "productionUnit"
+        }
+      ]
+    }
+  }
+}

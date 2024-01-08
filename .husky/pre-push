@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+CURRENT_ENVIRONMENT=${IS_CI_CD:-'false'}
+echo "Is this a CI/CD environment? $CURRENT_ENVIRONMENT"
+
+# * Make sure the developer is using the project's '.gitconfig',
+# * and that 'package-lock.json' is up-to-date with 'package.json'
+([[ -z $IS_CI_CD ]] && git config --local include.path ../.gitconfig) || true
+
+# * Make sure all versions are pinned
+if (cat package.json | grep '\^'); then
+  echo 'Please make sure all the dependencies have a pinned version'
+  exit 1
+fi
+
+# ? Check if 'package.json' has been updated
+git diff --quiet HEAD HEAD~1 -- package.json || (npm cache clean --force && rm npm-shrinkwrap.json && npm install --prefer-offline --no-audit && npm shrinkwrap)
+
+# ? Checks if there's any source changes on 'amplify/' with respect to the last commit, and if so runs backend tests
+git diff --quiet HEAD HEAD~1 -- amplify || (npm run backend:setup && npm run backend:check:tests -- --coverage)
+
+# ? Checks if there's any source changes on 'src/' with respect to the last commit, and if so runs frontend tests
+git diff --quiet HEAD HEAD~1 -- src || npm run frontend:check:tests -- --coverage
+
+npm run check:changelog

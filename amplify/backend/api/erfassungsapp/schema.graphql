@@ -1,0 +1,743 @@
+type disruption @model(subscriptions: null)
+  @key(name: "byUnit", fields: ["unitId"])
+  @key(name: "byTeam", fields: ["teamId"])
+  @key(name: "byCycleStation", fields: ["cycleStationId"])
+  @key(name: "disruptionsByDeletedAndUpdatedAt", fields: ["deleted", "updatedAt"], queryField: "disruptionsByDeletedAndUpdatedAt")
+  @key(name: "disruptionByUnitId", fields: ["unitId", "deleted", "template"], queryField: "disruptionsByUnitId")
+  @key(name: "listTemplatesByUnit", fields: ["unitId", "template"], queryField: "listTemplatesByUnit")
+  @key(name: "disruptionByUnitIdAndStartTimeDateUTC", fields: ["unitId", "startTimeDateUTC"], queryField: "disruptionByUnitIdAndStartTimeDateUTC")
+  @key(name: "disruptionByTemplateIdAndStartTimeDateUTC", fields: ["templateId", "startTimeDateUTC"], queryField: "disruptionByTemplateIdAndStartTimeDateUTC")
+  @auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+    ])
+  {
+  id: ID!
+  unitId: ID! # ID of the unit which currently manufactures the part
+  unit: Unit @connection(fields: ["unitId"])
+  cycleStationId: ID!
+  cycleStation: CycleStation @connection(fields: ["cycleStationId"])
+  teamId: ID
+  team: Team @connection(fields: ["teamId"])
+  originatorId: ID
+  originatorTeam: Team @connection(fields: ["originatorId"])
+  disLocation: String #Level 1: 'Waehlen Sie eine Kategorie aus' /  'Select a category' (e.g. Machine, Method, Material, Human, Environment)
+  disLocationSpecification: String #Level 2 'Waehlen Sie eine Ursache aus' / 'Select a cause' (e.g. Unit, Robot, 'Foerdertechnik'/'Transport', Build Group, Tool)
+  disLocationType: String #Level 3 'Waehlen Sie eine Art der Maschinenstoerung aus' / 'Select a type of disruption' (e.g. Electric, Mechanic, Hydraulic, Pneumatic)
+  description: String! # Title of the disruption
+  startTimeDateUTC: AWSDateTime! # Start time of disruption (is calculated by End time substracted by duration)
+  endTimeDateUTC: AWSDateTime! # End time of disruption
+  timeZone: String # Time zone of user using the iProcess frontend, used to calculate UTC
+  duration: AWSTime # Duration of the disruption (in minutes)
+  measures: String # Measures to end disruption
+  partId: String # ID of the part which is currently manufactured on the Unit
+  # TODO (VDD-382): rename to 'isTemplate'
+  template: Bool! # Is this entry a template? Both disruptions and template of disruptions are saved in the same table
+  templateId: ID! # References the Disruption Template used to create the (current) Disruption item
+  # TODO (VDD-382): rename to 'isDeleted'
+  deleted: Bool! # Is this entry deleted? Delted entries are not removed from database but marked as deleted
+  shiftType: Shift # ? enum: "morningShift, afternoonShift, nightShift" - optional and not mandatory as this is not needed for the application but only nice to have in the analytics
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime # ! Can't be non-nullable as this value is created in DynamoDB, not AppSync
+  lostVehicles: Float
+  issues: [Issue!]
+  attachments: [Attachment!]
+  m100: Float
+  index: Float
+  isSolved: Bool
+}
+
+type Attachment {
+  key: ID!
+  type: String!
+  size: Float!
+  uploadedBy: String!
+  createdAt: AWSDateTime!
+}
+
+type Issue {
+  id: ID!
+  name: String!
+  index: Float!
+}
+
+# FIXME: Confusing name. Please rename to e.g. 'BoolAsString'
+enum Bool {
+  yes
+  no
+}
+
+type MeasureReport @model(subscriptions: null)
+  @key(name: "listMeasures", fields: ["reportId"], queryField: "listMeasures")
+  @auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+    ])
+  {
+    id: ID!
+    # * Disruption details
+    templateId: ID
+    subDepartment: String # ? The assignee for Measure items
+    description: String! # ? also shared with Measures
+    notes: String
+    firstOccurrence: AWSDate
+    productNumber: String
+    totalDuration: String # ? follows format 'HH:mm'
+    frequency: Float
+    unitId: ID! # ? NIL or the unit's ID
+    unit: Unit @connection(fields: ["unitId"])
+    classifications: AWSJSON
+    cycleStationName: String
+    isCritical: Bool # ? Cannot be set as 'required' as it's mandatory for Reports but not for Measures
+    progress: Progress # ? Cannot be set as 'required' as it's mandatory for Reports but not for Measures
+    attachments: AWSJSON # TODO VDD-828: Replace with type Attachment and add __typename: "Attachment" to old data in dynamodb
+    # * Systematic Problem Analysis
+    what: String
+    when: AWSDate
+    where: String
+    causes: AWSJSON
+    # * Measures (it's a different Data Type)
+    reportId: ID! # ? NIL or the measure's Report ID
+    status: Status
+    dueDate: AWSDate
+  }
+
+enum Progress {
+  Open
+  InProgress
+  Completed
+}
+
+enum Status {
+  Described
+  Defined
+  Planned
+  Implemented
+  Solved
+  Unsolved
+}
+
+type Grouping @model(subscriptions: null)
+  @auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"], operations: [read] },
+    { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+  ])
+{
+  id: ID!
+  groupingName: String! # e.g. LS 1
+  units: [Unit] @connection(keyName: "byGrouping", fields: ["id"])
+  allowedDepartments: [ID!] 
+}
+
+enum Shift {
+  morningShift
+  afternoonShift
+  nightShift
+}
+
+type Department {
+  id: ID!
+  name: String!
+  index: Float!
+}
+
+type Team @model(subscriptions: null)
+@key(name: "byUnit", fields: ["unitId"], queryField: "teamsByUnit")
+@auth(rules: [
+  { allow: private, provider: iam },
+  { allow: groups, groups: ["standard"], operations: [read] },
+  { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+  { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+])
+{
+  id: ID!
+  name: String!
+  unitId: ID!
+  unit: Unit @connection(fields: ["unitId"])
+  index: Float!
+  cycleStations: [CycleStation] @connection(keyName: "byTeam", fields: ["id"], limit: 2000)
+  templates: [disruption] @connection(keyName: "byTeam", fields: ["id"])
+}
+
+type CycleStation @model(subscriptions: null)
+@key(name: "byUnit", fields: ["unitId"], queryField: "cycleStationsByUnit")
+@key(name: "byTeam", fields: ["teamId"], queryField: "cycleStationsByTeam")
+@key(name: "activeCycleStationsByUnit", fields: ["unitId", "isActive"], queryField: "activeCycleStationsByUnit")
+@key(name: "activeCycleStationsByTeam", fields: ["teamId", "isActive"], queryField: "activeCycleStationsByTeam")
+@auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"], operations: [update, read] },
+    { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+  ])
+{
+  id: ID!
+  unitId: ID!
+  unit: Unit @connection(fields: ["unitId"])
+  teamId: ID
+  team: Team @connection(fields: ["teamId"])
+  name: String!
+  isActive: Bool!
+  index: Float!
+  templates: [disruption] @connection(keyName: "byCycleStation", fields: ["id"])
+}
+
+type Unit @model(subscriptions: null)
+@key(name: "byGrouping", fields: ["groupingId"], queryField: "unitsByGrouping")
+@key(name: "byUserSetting", fields: ["unitUserSettingId"])
+@key(name: "byProblemClassification", fields: ["unitProblemClassificationId"])
+@key(name: "byMachineId", fields: ["machineId"], queryField: "unitByMachineId")
+@auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"], operations: [update, read] },
+    { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+  ])
+{
+  id: ID!
+  name: String! # Unit Name, e.g. Anlagenname z.b. Roby, Karussell, Laserschneider, Klebeanlage ('gluing unit')
+  shortName: String! # ? e.g. K1, K2, etc. 
+  type: UnitType! # ? enum: "assemblyLine, productionUnit"
+  manufacturer: String # Manufacturer of the Unit
+  speedModes: AWSJSON
+  parts: [PartUnit] @connection(keyName: "byUnit", fields: ["id"])
+  shiftModels: [ShiftModelUnit] @connection(keyName: "byUnit", fields: ["id"])
+  cycleStations: [CycleStation] @connection(keyName: "byUnit", fields: ["id"])
+  teams: [Team] @connection(keyName: "byUnit", fields: ["id"])
+  templates: [disruption] @connection(keyName: "byUnit", fields: ["id"])
+  groupingId: ID
+  grouping: Grouping @connection(fields: ["groupingId"])
+  unitUserSettingId: ID
+  unitUserSetting: UnitUserSetting @connection(fields: ["unitUserSettingId"])
+  unitProblemClassificationId: ID
+  unitProblemClassification: UnitProblemClassification @connection(fields: ["unitProblemClassificationId"])
+  m100Range: M100Range
+  machineId: ID!
+}
+
+type M100Range {
+  min: Float!
+  max: Float!
+}
+
+enum UnitType {
+  assemblyLine
+  productionUnit
+}
+
+type UnitProblemClassification @model(subscriptions: null)
+@auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"], operations: [update, read] },
+    { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+  ])
+{
+  id: ID!
+  classification: AWSJSON
+  units: [Unit] @connection(keyName: "byProblemClassification", fields: ["id"])
+}
+
+type UnitUserSetting @model(subscriptions: null)
+@auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"], operations: [read, update] },
+    { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+  ])
+{
+  id: ID!
+  replacer: Bool
+}
+
+
+type PartUnit @model(subscriptions: null)
+@key(name: "byUnit", fields: ["unitId", "partId"])
+@key(name: "byPart", fields: ["partId", "unitId"])
+@auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"], operations: [read] },
+    { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+  ])
+{
+  id: ID!
+  unitId: ID!
+  partId: ID!
+  targetCycleTime: Float
+  unit: Unit @connection(fields: ["unitId"])
+  part: Part @connection(fields: ["partId"])
+}
+
+type Part @model(subscriptions: null)
+@auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"], operations: [read] },
+    { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+  ])
+{
+  id: ID!
+  partNumber: String! # VW-defined Part Number uniqueliy identifies part
+  name: String! # human readable description of parts
+  units: [PartUnit] @connection(keyName: "byPart", fields: ["id"])
+  qualityIssueConfig: AWSJSON
+  imageFront: String #file path
+  imageBack: String #file path
+}
+
+enum SplitPosition {
+  First
+  Last
+  Middle
+}
+
+type VehicleNumber {
+  from: Float # vehicle number from previous schedule slot. Only used to define a different value between different shifts
+  until: Float # vehicle number from current schedule slot
+}
+
+type actualCount @model(subscriptions: null)
+  @key(name: "timeSlotByDeletedAndUpdatedAt", fields: ["deleted", "updatedAt"], queryField: "timeSlotByDeletedAndUpdatedAt")
+  @key(name: "scheduleSlotByUnitAndDateTimeStart", fields: ["unitId", "dateTimeStartUTC", ], queryField: "scheduleSlotByUnitAndDateTimeStart")
+  @key(name: "scheduleSlotByUnitAndDateTimeEnd", fields: ["unitId", "dateTimeEndUTC", ], queryField: "scheduleSlotByUnitAndDateTimeEnd")
+  @auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+  ])
+{
+  id: ID! 
+  dateTimeStartUTC: AWSDateTime! # Start of the timeslot in which actualcount was documented
+  dateTimeEndUTC: AWSDateTime! # End of the timeslot in which actualcount was documented
+  downtime: String # ? Time range in which production is 0 (e.g. '00:10')
+  timeZone: String!
+  shift: Shift!
+  shiftModelId: ID!
+  initialActualCount: Float # first actual count coming from the Machine Data (OverflowCounter)
+  actualCount: Float # actual number of produced parts (can be different from quota)
+  vehicleNumber: VehicleNumber # it refers to the number of the last finished vehicle/product of that spicific schedule slot
+  quota: Float! # target/goal number of produced parts
+  defective: Float # number of parts which have defects, this reduces the number of finally produces parts
+  partId: ID!
+  part: Part @connection(fields: ["partId"])
+  unitId: ID!
+  unit: Unit @connection(fields: ["unitId"])
+  configurationId: ID!
+  configuration: Configuration @connection(fields: ["configurationId"])
+  deleted: Bool!
+  type: Type!
+  split: SplitPosition
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Defective @model(subscriptions: null)
+  @key(name: "defectivesByDeletedAndUpdatedAt", fields: ["deleted", "updatedAt"], queryField: "defectivesByDeletedAndUpdatedAt")
+  @key(name: "defectiveByUnitIdAndDateTimeUTC", fields: ["unitId", "dateTimeUTC"], queryField: "defectiveByUnitIdAndDateTimeUTC")
+  @auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+  ])
+{
+  id: ID!
+  dateTime: AWSDateTime # TODO VDD-511: Please drop this field; no longer used
+  dateTimeUTC: AWSDateTime
+  timeZone: String
+  shift: Shift!
+  partId: ID!
+  part: Part @connection(fields: ["partId"])
+  unitId: ID!
+  unit: Unit @connection(fields: ["unitId"])
+  defectiveGrid: String # an image is provided to the user, he/she can click on parts of the image to identify the exact location of the damage on the defective part. these locations are defined in a grid (A1, A2, B1, B2 etc.)
+  defectiveType: String # 'Classification', e.g. Unit or Robot, Delivery, Handling
+  defectiveCause: String # 'Type of Damage', e.g. paintjob (Lackpickel, Lackierung n.i.O.), scratches/'Kratzer'
+  defectiveLocation: String # 'Source of Damage', e.g. H41, H53a (production halls)
+  count: Float # number of defective parts
+  deleted: Bool!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime # ! Can't be non-nullable as this value is created in DynamoDB, not AppSync
+}
+
+type OEE @model(subscriptions: null)
+  @key(name: "listOEEsByUnitIdAndTimeDateUTC", fields: ["unitId", "startTimeDateUTC", "endTimeDateUTC"], queryField: "listOEEsByUnitIdAndTimeDateUTC")
+  @auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"], operations: [read] },
+    { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+  ])
+{
+  id: ID!
+  startTimeDateUTC: AWSDateTime!
+  endTimeDateUTC: AWSDateTime!
+  timeZone: String
+  overall: Float
+  availability: Float
+  performance: Float
+  quality: Float
+  actualCountSum: Float
+  quotaSum: Float
+  netOperatingTimeInMinutes: Float
+  targetCycleTimeInMinutes: Float
+  disruptionDurationSum: Float
+  defectiveCountSum: Float
+  unitId: ID!
+  unit: Unit @connection(fields: ["unitId"])
+  shiftType: Shift
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type ScheduleHour @model(subscriptions: null)
+  @key(name: "byScheduleHour", fields: ["shiftModelId"], queryField: "listScheduleHoursByShiftModelId")
+  @auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"], operations: [read] },
+    { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+  ])
+{
+  id: ID!
+  shiftType: Shift! # ? enum: "morningShift, afternoonShift, nightShift"
+  type: Type! # ? enum: "Production", "Pause", "ShiftChange",  "Inactive"
+  hoursStartUTC: AWSTime!
+  hoursEndUTC: AWSTime!
+  downtime: String # ? Time range in which production is 0 (e.g. '00:10')
+  timeZone: String! # ? e.g. 'Europe/Berlin'
+  shiftModelId: ID!
+  i: Float! # ? Index for sorting
+}
+
+enum Type {
+  Production
+  Pause
+  ShiftChange
+  Inactive
+}
+
+type ShiftModel @model(subscriptions: null)
+  @auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"], operations: [read] },
+    { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+  ])
+{
+  id: ID!
+  name: String!
+  isActive: Bool!
+  timeZone: String!
+  units: [ShiftModelUnit] @connection(keyName: "byShiftModel", fields: ["id"])
+  scheduleHours: [ScheduleHour] @connection(keyName: "byScheduleHour", fields: ["id"])
+}
+
+type ShiftModelUnit @model(subscriptions: null)
+@key(name: "byUnit", fields: ["unitId", "shiftModelId"])
+@key(name: "byShiftModel", fields: ["shiftModelId", "unitId"])
+@auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"], operations: [read] },
+    { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+  ])
+{
+  id: ID!
+  unitId: ID!
+  shiftModelId: ID!
+  unit: Unit @connection(fields: ["unitId"])
+  shiftModel: ShiftModel @connection(fields: ["shiftModelId"])
+}
+
+type Configuration @model(subscriptions: null)
+@key(name: "configurationByUnitAndValidFrom", fields: ["unitId", "validFrom"], queryField: "configurationByUnitAndValidFrom")
+  @auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"], operations: [read] },
+    { allow: groups, groups: ["manager"], operations: [create, update, delete, read] },
+    { allow: groups, groups: ["admin"], operations: [create, update, delete, read] }
+  ])
+{
+  id: ID!
+  target: Float
+  shiftTarget: Float!
+  attendingShift: AttendingShift
+  validFrom: AWSDateTime! # TODO (VDD-510): add UTC in the attribute name
+  validUntil: AWSDateTime!  # TODO (VDD-510): add UTC in the attribute name
+  timeZone: String!
+  speedMode: Float
+  cycleTime: Float!
+  partId: ID!
+  unitId: ID!
+  shiftModelId: ID!
+  shiftModel: ShiftModel @connection(fields: ["shiftModelId"])
+}
+
+enum AttendingShift {
+  Shift1
+  Shift2
+  Shift3
+  Shift4
+}
+
+type Query {
+  calculateShiftTargetCustom(input: CalculateShiftTargetInput): Float @function(name: "calculateShiftTarget-${env}") @auth(rules: [
+    { allow: private, provider: iam },
+    { allow: groups, groups: ["standard"] },
+    { allow: groups, groups: ["manager"] },
+    { allow: groups, groups: ["admin"] },
+  ])
+  calculateDisruptionKPIs(input: CalculateDisruptionKPIsInput): AWSJSON @function(name: "queryAthena-${env}")
+  getQuickSightURL(input: GetQuickSightURLInput!): String @function(name: "getQuickSightURL-${env}") @auth(rules: [
+    { allow: groups, groups: ["manager"] },
+    { allow: groups, groups: ["admin"] }
+  ])
+  getAvailableMachines: [ID] @function(name: "machineResolver-${env}") @auth(rules: [
+    { allow: groups, groups: ["manager"] },
+    { allow: groups, groups: ["admin"] }
+  ])
+  listCognitoUsers(input: ListCognitoUsersInput): AWSJSON @function(name: "listCognitoUsers-${env}") @auth(rules: [
+    { allow: groups, groups: ["manager"] },
+    { allow: groups, groups: ["admin"] }
+  ])
+}
+
+type Mutation {
+  calculateOEE(input: TimeRange): [OEE!] @function(name: "calculateOEE-${env}")
+  mutateMeasureReport(put: MeasureReportInput, delete: DeleteInput): ID @function(name: "measureReportResolver-${env}")
+  mutateProduct(put: ProductInput, delete: DeleteInput): ID @function(name: "productResolver-${env}")
+  mutateUnit(put: UnitInput, delete: DeleteInput): ID @function(name: "unitResolver-${env}")
+  mutateShiftModel(put: ShiftModelInput, duplicate: DuplicateInput, delete: DeleteInput): ID @function(name: "shiftModelResolver-${env}")
+  mutateTemplates(put: [TemplateInput!]!): ID @function(name: "disruptionResolver-${env}")
+  createGroupingCustom(put: LambdaGroupingInput): ID @function(name: "createGrouping-${env}")
+  updateGroupingCustom(put: LambdaGroupingInput): ID @function(name: "updateGrouping-${env}")
+  deleteGroupingCustom(delete: DeleteInput!): ID @function(name: "deleteGrouping-${env}")
+  createUnitProblemClassificationCustom(input: UnitProblemClassificationInput): String @function(name: "createProblemClassification-${env}")
+  deleteUnitProblemClassificationCustom(id: ID): String @function(name: "deleteProblemClassification-${env}")
+  updateUnitProblemClassificationCustom(input: UnitProblemClassificationInput): String @function(name: "updateProblemClassification-${env}")
+  startShift(input: StartShiftInput!): String @function(name: "startShift-${env}")
+  deleteConfigurationCustom(id: ID): String @function(name: "deleteConfiguration-${env}")
+  updateConfigurationsAndActualCounts(input: UpdateConfigurationsAndActualCountsInput): String @function(name: "updateConfigurationsAndActualCounts-${env}")
+}
+
+type Subscription {
+  onAddDisruption(unitId: ID!): disruption 
+    @aws_subscribe(mutations: ["createDisruption"]) 
+    @aws_iam
+    @aws_cognito_user_pools
+
+  onMutateActualCount(unitId: ID!): actualCount
+    @aws_subscribe(mutations: ["createActualCount", "updateActualCount", "deleteActualCount"])
+    @aws_iam
+    @aws_cognito_user_pools
+
+  onMutateDisruption(unitId: ID!): disruption
+    @aws_subscribe(mutations: ["createDisruption", "updateDisruption", "deleteDisruption"])
+    @aws_iam
+    @aws_cognito_user_pools
+
+  onStartShift(unitId: ID!): String
+    @aws_subscribe(mutations: ["startShift"]) 
+    @aws_iam
+    @aws_cognito_user_pools
+ }
+
+# * A datetime range used to check the 'updatedAt' column in the TimeSlot/Defective/Disruption tables
+input TimeRange {
+  startDateTime: AWSDateTime!
+  endDateTime: AWSDateTime!
+}
+
+input DeleteInput {
+  id: ID!
+}
+
+input DuplicateInput {
+  id: ID!
+}
+
+input MeasureReportInput {
+  id: ID # ? passed only on Update mutation
+  description: String!
+  templateId: ID!
+  notes: String = ""
+  firstOccurrence: AWSDate!
+  productNumber: String!
+  totalDuration: String!
+  frequency: Float!
+  unitId: ID!
+  classifications: String! # ? AWSJSON but required as String by AppSync
+  cycleStationName: String!
+  isCritical: Bool!
+  progress: Progress!
+  attachments: String = "" # ? AWSJSON but required as String by AppSync
+  # * Systematic Problem Analysis
+  what: String = ""
+  when: AWSDate
+  where: String = ""
+  causes: String # ? AWSJSON but required as String by AppSync
+  # * Measures
+  measures: [MeasureInput!]!
+}
+
+input MeasureInput {
+  id: ID!
+  reportId: ID # ? passed only on Update mutation
+  subDepartment: String!
+  status: Status!
+  dueDate: AWSDate!
+  description: String!
+  attachments: String = "" # ? AWSJSON but required as String by AppSync
+}
+
+input ProductInput {
+  id: ID # ? passed only on Update mutation
+  name: String!
+  number: String!
+  qualityIssueConfig: String = ""
+  unitsConfig: [TargetCycleTimeInput!]!
+}
+
+input TargetCycleTimeInput {
+  unitId: ID!
+  targetCycleTime: Float!
+}
+
+input ShiftModelInput {
+  id: ID # ? passed only on Update mutation
+  name: String!
+  isActive: Bool!
+  timeZone: String!
+  unitIds: [ID!]!
+  scheduleHours: [ScheduleHourInput!]!
+}
+
+input TemplateInput {
+  id: ID!
+  index: Float!
+}
+
+input ScheduleHourInput {
+  id: ID
+  shiftType: Shift!
+  type: Type!
+  hoursStartUTC: String!
+  hoursEndUTC: String!
+  downtime: String = ""
+  timeZone: String!
+  i: Float!
+}
+
+input UnitInput {
+  id: ID # ? passed only on Update mutation
+  name: String!
+  shortName: String!
+  type: UnitType!
+  m100Range: M100RangeInput
+  manufacturer: String = "" # * Empty string is set to null
+  speedModes: String = ""
+  teams: [TeamsInput!]!
+  cycleStations: [CycleStationInput!]!
+  machineId: ID!
+}
+
+input TeamsInput {
+  id: ID!
+  name: String!
+  index: Float!
+  cycleStations: [CycleStationInput!]!
+}
+
+input CycleStationInput {
+  id: ID!
+  name: String!
+  isActive: Bool!
+  index: Float!
+}
+
+input CalculateShiftTargetInput {
+  shiftModelId: ID!
+  cycleTime: Float!
+  shiftType: Shift!
+  speedMode: Float = 0
+}
+
+input UpdateConfigurationsAndActualCountsInput {
+  unitId: ID!
+  shiftType: Shift!
+  dateTimeStartUTC: AWSDateTime!
+  dateTimeEndUTC: AWSDateTime!
+  configurationIdsToDelete: [String!]!
+  configurations: [ConfigurationInput!]!
+}
+
+input GetQuickSightURLInput {
+  initialDashboardId: ID!
+}
+
+input ListCognitoUsersInput {
+  attributes: [String!]!
+}
+
+input CalculateDisruptionKPIsInput {
+  startDate: AWSDate!
+  endDate: AWSDate!
+  shifts: [Shift!]
+  unitIds: [ID!]!
+  disruptionCategories: [String!]!
+  disruptionDescriptions: [String!]!
+  disruptionTypes: [String!]!
+}
+
+input LambdaGroupingInput {
+  unitsIds: [ID!]!
+  subDepartmentIds: [ID!]!
+  id: ID = ""
+  name: String!
+}
+
+input M100RangeInput {
+  min: Float!
+  max: Float!
+}
+
+input UnitProblemClassificationInput {
+  id: ID = ""
+  classification: AWSJSON
+  unitsIds: [ID]
+}
+
+input StartShiftInput {
+  unitId: ID!
+  partId: ID!
+  shiftModelId: ID!
+  shiftType: Shift!
+  attendingShift: AttendingShift!
+  timeRange: TimeRange!
+  timeZone: String!
+  shiftTarget: Float
+  cycleTime: Float
+  speedMode: Float # ? factor
+}
+
+# ? Checked in the back-end
+input ConfigurationInput {
+  validFrom: AWSTime
+  validUntil: AWSTime
+  partId: ID
+  shiftModelId: ID
+  shiftTarget: Float
+  cycleTime: Float
+  speedMode: Float 
+  timeZone: String
+  unitType: UnitType
+}

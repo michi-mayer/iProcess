@@ -1,0 +1,172 @@
+[
+  {
+    "Name": "partname",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "partnumber",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "partid",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "template",
+    "Type": "boolean",
+    "Comment": ""
+  },
+  {
+    "Name": "dislocationtype",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "timezone",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "description",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "dislocationspecification",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "templateid",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "starttimedateutc",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "starttimedatelocal",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "starttimedatelocalvwday",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "duration",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "createdat",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "measures",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "deleted",
+    "Type": "boolean",
+    "Comment": ""
+  },
+  {
+    "Name": "cyclestationid",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "cyclestation",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "unitid",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "id",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "endtimedateutc",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "endtimedatelocal",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "endtimedatelocalvwday",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "duration_minutes",
+    "Type": "int",
+    "Comment": ""
+  },
+  {
+    "Name": "dislocation",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "updatedat",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "unitname",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "index",
+    "Type": "float",
+    "Comment": ""
+  },
+  {
+    "Name": "isactive",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "shifttype",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "shiftgerman",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "lostvehicles",
+    "Type": "bigint",
+    "Comment": ""
+  },
+  {
+    "Name": "teamid",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "originatorid",
+    "Type": "string",
+    "Comment": ""
+  }
+]

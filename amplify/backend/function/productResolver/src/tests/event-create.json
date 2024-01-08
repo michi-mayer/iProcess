@@ -1,0 +1,10 @@
+{
+  "arguments": {
+    "put": {
+      "name": "part-name",
+      "number": "part-number",
+      "qualityIssueConfig": "",
+      "unitsConfig": []
+    }
+  }
+}

@@ -1,0 +1,6 @@
+[
+  {
+    "Action": ["xray:*"],
+    "Resource": ["arn:aws:xray:*:*:*"]
+  }
+]

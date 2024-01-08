@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "erfassungsapp",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "autherfassungsapp373264a5",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

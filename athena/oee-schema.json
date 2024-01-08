@@ -1,0 +1,92 @@
+[
+  {
+    "Name": "createdat",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "unitid",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "quality",
+    "Type": "double",
+    "Comment": ""
+  },
+  {
+    "Name": "timezone",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "performance",
+    "Type": "double",
+    "Comment": ""
+  },
+  {
+    "Name": "shifttype",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "availability",
+    "Type": "double",
+    "Comment": ""
+  },
+  {
+    "Name": "updatedat",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "ist",
+    "Type": "double",
+    "Comment": ""
+  },
+  {
+    "Name": "soll",
+    "Type": "double",
+    "Comment": ""
+  },
+  {
+    "Name": "endtimedateutc",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "endtimedatelocal",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "endtimedatelocalvwday",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "starttimedateutc",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "starttimedatelocal",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "starttimedatelocalvwday",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "unitname",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "id",
+    "Type": "string",
+    "Comment": ""
+  }
+]

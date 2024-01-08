@@ -1,0 +1,18 @@
+{
+  "overview": {
+    "diagram": {
+      "currentShiftTitle": "Top 5 Disruptions (Current Shift)",
+      "disruption": "Disruption",
+      "noDataMessage": "There is no available data.",
+      "occurrences": "times",
+      "overallFrequency": "Overall Frequency",
+      "pastShiftTitle": "Top 3 Disruptions (Previous Shift)"
+    },
+    "disruptionList": {
+      "title": "Team Monitor",
+      "myTeam": "My Team",
+      "followingTeams": "Next Teams"
+    },
+    "noShiftStartedBanner": "A shift must be started first in the application production."
+  }
+}

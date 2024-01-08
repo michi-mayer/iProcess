@@ -1,0 +1,29 @@
+{
+  "panel": {
+    "header": "Dashboards",
+    "options": "Options"
+  },
+  "disruptions": {
+    "addMeasureReport": "Add Measure Report",
+    "editMeasureReport": "Edit Measure Report"
+  },
+  "paretoFilter": {
+    "titleDuration": "Disruptions by Duration (in Minutes)",
+    "titleFrequency": "Disruptions by Frequency",
+    "occurrences": "times",
+    "disruption": "Disruption",
+    "overallDuration": "Overall Duration (min)",
+    "overallFrequency": "Overall Frequency",
+    "clearAll": "Clear all",
+    "nothingSelectedMessage": "Please choose...",
+    "noDataMessage": "There is no available data based on the filter criteria you selected. Try removing some filters to see more results.",
+    "startDate": "Pick a start date",
+    "endDate": "Pick an end date",
+    "by": "Filter by {{value}}",
+    "shifts": "Shifts",
+    "unitIds": "Units",
+    "disruptionCategories": "Disruption Categories",
+    "disruptionDescriptions": "Disruption Descriptions",
+    "disruptionTypes": "Disruption Types"
+  }
+}

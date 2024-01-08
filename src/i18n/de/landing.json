@@ -1,0 +1,56 @@
+{
+  "header": {
+    "overview": "Willkommen bei i.Process",
+    "changelog": "i.Process Changelog"
+  },
+  "sidebar": {
+    "overview": "Überblick",
+    "feedback": "Feedback",
+    "dataPrivacy": "Datenschutz",
+    "changelog": "Changelog"
+  },
+  "applications": {
+    "section": "Anwendungen",
+    "production": "Produktion",
+    "rejected": "Ausschuss",
+    "teamMonitor": "Team Monitor",
+    "measures": "Maßnahmen",
+    "dashboard": "Dashboard",
+    "shiftDashboard": "Schicht Dashboard",
+    "shopFloorDashboard": "Shopfloor Dashboard",
+    "longTermDashboard": "Langzeit Dashboard",
+    "managementDashboard": "Management Dashboard",
+    "issueSpecificationDashboard": "Problemspezifkation Dashboard",
+    "admin": "Admin",
+    "open": "Öffnen",
+    "requestAccess": "Zugang anfordern",
+    "descriptions": {
+      "productionDescription": "IST Stückzahlen, Störungen und Ausschuss für Anlagen und Schichten erfassen.",
+      "rejectedDescription": "Ausschuss an Anlagen erfassen und klassifizieren.",
+      "teamMonitorDescription": "Team Monitor für die digitale Fehlerrückspiegelung (nur Montagelinien)",
+      "measuresDescription": "Maßnahmen für Störungen an Anlagen definieren und nachverfolgen.",
+      "dashboardDescription": "Auswertung von OEE, Stückzahlerreichung, Ausfallzeiten und Qualität für  Anlagen einsehen.",
+      "shiftDashboardDescription": "",
+      "shopFloorDashboardDescription": "Tageweise Auswertung von Stückzahlen, Störungen und Ausschuss.",
+      "longTermDashboardDescription": "Wochenweise Auswertung von Stückzahlen, Störungen, OEE und Ausschuss",
+      "managementDashboardDescription": "",
+      "issueSpecificationDashboardDescription": "",
+      "adminDescription": "Stammdaten für iProcess Produktion pflegen."
+    }
+  },
+  "changelog": {
+    "section": "Aktuelles",
+    "showMore": "Mehr anzeigen",
+    "showLess": "Weniger anzeigen",
+    "pagination": "Beiträge pro Seite",
+    "paginationOf": "von",
+    "enhanced": "Erweiterungen",
+    "fixed": "Behobene Fehler",
+    "by": "Von ",
+    "openChangelog": "Changelog öffnen",
+    "whatsNew": "Was ist neu"
+  },
+  "dashboard": {
+    "goBack": "Zurück zur iProcess Startseite"
+  }
+}

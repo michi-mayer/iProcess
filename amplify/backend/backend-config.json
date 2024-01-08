@@ -1,0 +1,836 @@
+{
+  "api": {
+    "erfassungsapp": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "erfassungsapp373264a5"
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ],
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "autherfassungsapp373264a5"
+            }
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
+  "auth": {
+    "erfassungsapp373264a5": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "calculateOEE": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "erfassungsapp"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "calculateShiftTarget": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        },
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "erfassungsapp"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "createGrouping": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "erfassungsapp"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "createProblemClassification": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "dataScripts": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "erfassungsapp"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "deleteConfiguration": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "deleteGrouping": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "erfassungsapp"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "deleteProblemClassification": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "disruptionResolver": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "erfassungsapp"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "getLastConfigurationByUnit": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "getQuickSightURL": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "iProcessLambdaShared": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    },
+    "listCognitoUsers": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "erfassungsapp373264a5"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "machineResolver": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "erfassungsapp"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "measureReportResolver": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "erfassungsapp"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "productResolver": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "erfassungsapp"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "queryAthena": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "erfassungsapp"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "shiftModelResolver": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        },
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "erfassungsapp"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "startShift": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        },
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "erfassungsapp"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "unitResolver": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "erfassungsapp"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "updateCognitoGroupPreAuth": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "erfassungsapp373264a5"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "updateConfigurationsAndActualCounts": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "erfassungsapp"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "updateGrouping": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput"
+          ],
+          "category": "api",
+          "resourceName": "erfassungsapp"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "updateProblemClassification": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_calculateOEE_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "calculateOEE"
+        }
+      ]
+    },
+    "AMPLIFY_function_calculateOEE_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "calculateOEE"
+        }
+      ]
+    },
+    "AMPLIFY_function_calculateShiftTarget_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "calculateShiftTarget"
+        }
+      ]
+    },
+    "AMPLIFY_function_calculateShiftTarget_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "calculateShiftTarget"
+        }
+      ]
+    },
+    "AMPLIFY_function_createGrouping_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createGrouping"
+        }
+      ]
+    },
+    "AMPLIFY_function_createGrouping_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createGrouping"
+        }
+      ]
+    },
+    "AMPLIFY_function_createProblemClassification_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createProblemClassification"
+        }
+      ]
+    },
+    "AMPLIFY_function_createProblemClassification_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "createProblemClassification"
+        }
+      ]
+    },
+    "AMPLIFY_function_dataScripts_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "dataScripts"
+        }
+      ]
+    },
+    "AMPLIFY_function_dataScripts_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "dataScripts"
+        }
+      ]
+    },
+    "AMPLIFY_function_deleteConfiguration_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "deleteConfiguration"
+        }
+      ]
+    },
+    "AMPLIFY_function_deleteConfiguration_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "deleteConfiguration"
+        }
+      ]
+    },
+    "AMPLIFY_function_deleteGrouping_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "deleteGrouping"
+        }
+      ]
+    },
+    "AMPLIFY_function_deleteGrouping_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "deleteGrouping"
+        }
+      ]
+    },
+    "AMPLIFY_function_deleteProblemClassification_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "deleteProblemClassification"
+        }
+      ]
+    },
+    "AMPLIFY_function_deleteProblemClassification_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "deleteProblemClassification"
+        }
+      ]
+    },
+    "AMPLIFY_function_disruptionResolver_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "disruptionResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_disruptionResolver_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "disruptionResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_getLastConfigurationByUnit_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getLastConfigurationByUnit"
+        }
+      ]
+    },
+    "AMPLIFY_function_getLastConfigurationByUnit_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getLastConfigurationByUnit"
+        }
+      ]
+    },
+    "AMPLIFY_function_getQuickSightURL_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getQuickSightURL"
+        }
+      ]
+    },
+    "AMPLIFY_function_getQuickSightURL_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getQuickSightURL"
+        }
+      ]
+    },
+    "AMPLIFY_function_iProcessLambdaShared_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ]
+    },
+    "AMPLIFY_function_iProcessLambdaShared_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "iProcessLambdaShared"
+        }
+      ]
+    },
+    "AMPLIFY_function_listCognitoUsers_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "listCognitoUsers"
+        }
+      ]
+    },
+    "AMPLIFY_function_listCognitoUsers_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "listCognitoUsers"
+        }
+      ]
+    },
+    "AMPLIFY_function_measureReportResolver_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "measureReportResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_measureReportResolver_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "measureReportResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_productResolver_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "productResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_productResolver_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "productResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_queryAthena_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "queryAthena"
+        }
+      ]
+    },
+    "AMPLIFY_function_queryAthena_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "queryAthena"
+        }
+      ]
+    },
+    "AMPLIFY_function_shiftModelResolver_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "shiftModelResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_shiftModelResolver_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "shiftModelResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_startShift_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "startShift"
+        }
+      ]
+    },
+    "AMPLIFY_function_startShift_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "startShift"
+        }
+      ]
+    },
+    "AMPLIFY_function_unitResolver_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "unitResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_unitResolver_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "unitResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_updateConfigurationsAndActualCounts_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updateConfigurationsAndActualCounts"
+        }
+      ]
+    },
+    "AMPLIFY_function_updateConfigurationsAndActualCounts_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updateConfigurationsAndActualCounts"
+        }
+      ]
+    },
+    "AMPLIFY_function_updateGrouping_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updateGrouping"
+        }
+      ]
+    },
+    "AMPLIFY_function_updateGrouping_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updateGrouping"
+        }
+      ]
+    },
+    "AMPLIFY_function_updateProblemClassification_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updateProblemClassification"
+        }
+      ]
+    },
+    "AMPLIFY_function_updateProblemClassification_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updateProblemClassification"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "images": {
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    }
+  }
+}

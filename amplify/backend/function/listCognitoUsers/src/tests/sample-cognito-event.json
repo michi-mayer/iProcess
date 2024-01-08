@@ -1,0 +1,78 @@
+{
+  "Users": [
+    {
+      "Username": "cypress.admin.dev",
+      "Attributes": [
+        {
+          "Name": "sub",
+          "Value": "4b055ad5-b5ba-4f10-b264-53bf53571c7c"
+        },
+        {
+          "Name": "email_verified",
+          "Value": "true"
+        },
+        {
+          "Name": "email",
+          "Value": "acool.guy@maibornwolff.de"
+        }
+      ],
+      "UserCreateDate": "2022-11-07T10:26:35.904000+01:00",
+      "UserLastModifiedDate": "2022-11-07T10:27:08.519000+01:00",
+      "Enabled": true,
+      "UserStatus": "CONFIRMED"
+    },
+    {
+      "Username": "vwcloudidp_de1234f4-c92b-4aa5-bc70-0de7a19896be",
+      "Attributes": [
+        {
+          "Name": "sub",
+          "Value": "e8564d42-61fb-4102-b643-59887d6a6ad7"
+        },
+        {
+          "Name": "custom:subdepartment",
+          "Value": "PWK-P/4"
+        },
+        {
+          "Name": "zoneinfo",
+          "Value": "PWK-P/4"
+        },
+        {
+          "Name": "address",
+          "Value": "PWK-P"
+        },
+        {
+          "Name": "identities",
+          "Value": "[{\"userId\":\"de1234f4-c92b-4aa5-bc70-0de7a19896be\",\"providerName\":\"VWCloudIdp\",\"providerType\":\"OIDC\",\"issuer\":null,\"primary\":true,\"dateCreated\":1666079901779}]"
+        },
+        {
+          "Name": "email_verified",
+          "Value": "false"
+        },
+        {
+          "Name": "profile",
+          "Value": "[\"VWAG_IPROCESS_ADMIN_PROD\"]"
+        },
+        {
+          "Name": "locale",
+          "Value": "ES"
+        },
+        {
+          "Name": "given_name",
+          "Value": "Curly"
+        },
+        {
+          "Name": "family_name",
+          "Value": "Hair Guy"
+        },
+        {
+          "Name": "email",
+          "Value": "curly.hairguy@maibornwolff.de"
+        }
+      ],
+      "UserCreateDate": "2022-10-18T09:58:21.788000+02:00",
+      "UserLastModifiedDate": "2023-01-03T10:53:58.849000+01:00",
+      "Enabled": true,
+      "UserStatus": "EXTERNAL_PROVIDER"
+    }
+  ]
+}

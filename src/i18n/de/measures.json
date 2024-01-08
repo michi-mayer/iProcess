@@ -1,0 +1,95 @@
+{
+  "header": {
+    "overview": "Überblick",
+    "newMeasureReport": "Neuer Maßnahmenbericht",
+    "measureReport": "Maßnahmenbericht",
+    "discard": "Eingabe Verwerfen",
+    "save": "Speichern",
+    "createdByAndDate": "Erstellt am {{date}}"
+  },
+  "attachements": {
+    "by": "von"
+  },
+  "disruptionDetails": {
+    "title": "Störungdetails",
+    "description": "Informationen und Anhänge",
+    "disruption": "Störung",
+    "product": "Produkt",
+    "unit": "Anlage",
+    "cycleStation": "Takt / Station",
+    "dateOfFirstOccurrence": "Erstmaliges auftreten",
+    "duration": "Dauer (Gesamt)",
+    "classification": "Klassifizierung",
+    "notesTitle": "Notizen",
+    "attachments": "Anhänge",
+    "missingAttachments": "Keine Anhänge",
+    "notesPlaceholder": "Detaillierte Problembeschreibung",
+    "download": "Herunterladen",
+    "uploadFile": "Datei hochladen",
+    "errorUploadingFile": "Beim Hochladen der Dateien ist etwas schiefgegangen",
+    "wrongFormat": "Nur folgende Formate *.jpg *.png oder *.raw sind erlaubt.",
+    "restore": "Wiederherstellen"
+  },
+  "systematicProblemAnalysis": {
+    "title": "Systematische Problemanalyse",
+    "description": "Hilfestellung zur Ableitung von Maßnahmen",
+    "problemOverview": "Problem Überblick",
+    "what": "Was",
+    "whatSubTitle": "Was ist der Schwerpunkt des Problems?",
+    "whatPlaceholder": "z.B. wichtigste Beobachtung",
+    "when": "Wann",
+    "whenSubTitle": "Wann wurde es zum ersten Mal beobachtet?",
+    "where": "Wo",
+    "whereSubTitle": "Wo ist das Problem aufgetreten? Welche anderen Anlagen könnten betroffen sein?",
+    "wherePlaceholder": "z.B. ML1, Stanze",
+    "prioritiseCauses": "Priorisieren Sie die Ursachen",
+    "prioritiseCausesDescription": "Betrachte Mensch, Maschine, Material, Umwelt, Methode",
+    "causeError": "Bitte vervollständigen Sie die Ursache",
+    "causePlaceholder": "z.B. Zeitdruck"
+  },
+  "measures": {
+    "title": "Maßnahmen",
+    "description": "Maßnahmen zur Beseitigung des Problems",
+    "subTitle": "Neue Maßnahme",
+    "descriptionTitle": "Beschreibung",
+    "descriptionError": "Bitte geben Sie eine Beschreibung ein",
+    "descriptionPlaceholder": "Detaillierte Beschreibung ",
+    "assigneeTitle": "Verantwortlichkeit",
+    "assigneeError": "Bitte legen Sie eine Verantwortlichkeit fest",
+    "assigneePlaceholder": "Verantwortlichkeit wählen",
+    "noOptionsPlaceholder": "Keine Optionen verfügbar",
+    "statusTitle": "Status",
+    "dueDateTitle": "Fälligkeitsdatum",
+    "dueDateError": "Bitte geben Sie ein Fälligkeitsdatum ein",
+    "addNewMeasure": "Neue Maßnahme hinzufügen",
+    "critical": "Kritisch"
+  },
+  "status": {
+    "described": "Maßnahme beschrieben",
+    "defined": "Analyse abgeschlossen, Maßnahme festgelegt",
+    "planned": "Maßnahme ausgeplant + entschieden",
+    "implemented": "Maßnahme umgesetzt",
+    "solved": "Maßnahme wirksam / Problem beseitigt",
+    "unsolved": "Maßnahme nicht wirksam / Problem nicht gelöst"
+  },
+  "overview": {
+    "measureReportOverview": "Überblick Maßnahmenberichte",
+    "action": "Aktionen",
+    "search": "Suchen"
+  },
+  "filter": {
+    "status": "Status",
+    "critical": "Kritisch",
+    "assignee": "Verantwortlichkeit",
+    "yes": "Ja",
+    "no": "Nein",
+    "open": "Offen",
+    "inprogress": "In Bearbeitung",
+    "completed": "Erledigt",
+    "clearSearch": "Suche löschen"
+  },
+  "deleteMeasure": {
+    "title": "Maßnahme löschen",
+    "confirmToDeleteText": "Sind Sie sicher, dass Sie die Maßnahme löschen möchten? Alle zugehörigen Anhänge werden endgültig gelöscht."
+  }
+}

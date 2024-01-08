@@ -1,0 +1,6 @@
+[
+  {
+    "Action": ["cognito-idp:ListUsers"],
+    "Resource": ["arn:aws:cognito-idp:*:*:*"]
+  }
+]

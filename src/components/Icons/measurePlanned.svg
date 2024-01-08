@@ -1,0 +1,19 @@
+<svg id="measure-planned_decided-16" data-name="measure-planned+decided-16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="icon" d="M0,8a8,8,0,1,1,8,8A8.009,8.009,0,0,1,0,8Zm7.6,7.189V8.4H.811A7.21,7.21,0,0,0,7.6,15.189Zm.8,0A7.21,7.21,0,0,0,15.189,8.4H8.4ZM15.189,7.6A7.21,7.21,0,0,0,8.4.811V7.6ZM7.6,7.6V.811A7.21,7.21,0,0,0,.811,7.6Z" transform="translate(2 2)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_85" data-name="Group 85" transform="translate(-2 -1)">
+    <g id="Group_1549" data-name="Group 1549">
+      <g id="Ellipse_373" data-name="Ellipse 373" transform="translate(3 2)" fill="none" stroke="#20607e" stroke-width="1">
+        <circle cx="7" cy="7" r="7" stroke="none"/>
+        <circle cx="7" cy="7" r="6.5" fill="none"/>
+      </g>
+      <g id="Subtraction_1" data-name="Subtraction 1" transform="translate(-22223.002 -9591)" fill="#20607e">
+        <path d="M 22233.501953125 9606.48046875 L 22233.501953125 9593.5185546875 C 22236.8515625 9593.775390625 22239.5 9596.5830078125 22239.5 9599.9970703125 C 22239.5 9603.4140625 22236.8515625 9606.2236328125 22233.501953125 9606.48046875 Z" stroke="none"/>
+        <path d="M 22234.001953125 9605.916015625 C 22236.833984375 9605.4375 22239 9602.96484375 22239 9599.9970703125 C 22239 9597.0302734375 22236.8359375 9594.560546875 22234.001953125 9594.0830078125 L 22234.001953125 9605.916015625 M 22233.001953125 9607 L 22233.001953125 9593 C 22236.859375 9593 22240 9596.138671875 22240 9599.9970703125 C 22240 9603.8583984375 22236.859375 9606.9990234375 22233.001953125 9607 Z" stroke="none" fill="#20607e"/>
+      </g>
+    </g>
+  </g>
+</svg>

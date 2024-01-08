@@ -1,0 +1,41 @@
+{
+  "arguments": {
+    "put": {
+      "description": "Sample Template",
+      "templateId": "1f11fd0c-ea6a-4b1b-8a42-8a4d56276f74",
+      "unitId": "1f11fd0c-ea6a-4b1b-8a42-8a4d56276f63",
+      "notes": "",
+      "firstOccurrence": "2022-10-24",
+      "productNumber": "test",
+      "totalDuration": "02:00",
+      "frequency": 1,
+      "unitShortName": "AL1",
+      "classifications": "[\"Category 2\",\"C2 Reason 2\"]",
+      "cycleStationName": "Unit-specific",
+      "isCritical": "no",
+      "measures": [
+        {
+          "id": "10ab3730-dbd8-41d4-98f3-1bc326ec0c96",
+          "subDepartment": "sub-department-0",
+          "status": "Described",
+          "dueDate": "2022-10-25",
+          "description": "illo"
+        },
+        {
+          "id": "bce447bc-eaf5-421c-a4fd-4c4445c750af",
+          "subDepartment": "sub-department-2",
+          "status": "Planned",
+          "dueDate": "2022-10-25",
+          "description": "xaxo"
+        },
+        {
+          "id": "699fc0d7-735e-4658-a0ed-2f930c69dba7",
+          "subDepartment": "sub-department-3",
+          "status": "Described",
+          "dueDate": "2022-10-25",
+          "description": "nano"
+        }
+      ]
+    }
+  }
+}

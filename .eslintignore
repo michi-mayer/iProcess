@@ -1,0 +1,29 @@
+# Ignore artifacts:
+build
+coverage
+**/node_modules/*
+
+# Files related to GraphQL
+*.graphql
+src/API.ts
+src/graphql/*
+
+# Files related to AWS
+aws-exports.*s
+amplify/team-provider-info.json
+amplify/backend/amplify-meta.json
+amplify/cli.json
+s3/*
+glue/*
+licenses/*
+
+# Tests
+cypress/*
+amplify/backend/function/*/src/coverage
+amplify/backend/function/iProcessLambdaShared/opt/iprocess-shared/coverage
+
+# Front-end
+src/seed/*
+src/models
+src/app/admin/*
+src/**/*.js

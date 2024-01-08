@@ -1,0 +1,15 @@
+[
+  {
+    "startTimeDateUTC": "2022-08-21T21:30:00.000Z",
+    "endTimeDateUTC": "2022-08-22T05:29:00.000Z",
+    "timeZone": "Europe/Berlin",
+    "overall": 0.53,
+    "availability": 0.71,
+    "performance": 0.83,
+    "quality": 0.91,
+    "unitId": "64cf0d25-8f2b-450f-88fd-96c9653fa665",
+    "unitName": "Klebeanlage 1",
+    "shiftType": "morningShift",
+    "isReviewed": "no"
+  }
+]

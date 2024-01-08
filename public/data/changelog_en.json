@@ -1,0 +1,423 @@
+[
+  {
+    "author": "Admin",
+    "date": "01/01/2099",
+    "version": "v99.1.0-0",
+    "changes": [
+      "Admin: units can be selected one by one, even if some have the same short name or name"
+    ],
+    "fixes": []
+  },
+  {
+    "author": "Admin",
+    "date": "12/20/2023",
+    "version": "v23.51.6-3",
+    "changes": [
+      "Dashboard: Show reported disruptions by other teams",
+      "General: Buttons in dialogs are aligned",
+      "Landing Page: Users are restricted to see groupings of different subdepartments",
+      "Production: An attending shift needs to be selected before starting a shift",
+      "Admin: Same short names for units to set up a new configuration can be used",
+      "Production: The dialog to view a disruption now displays the informationen better."
+    ],
+    "fixes": [
+      "Production Unit: Possible to decrease the amount of rejected products.",
+      "Production: The disruption dialog is changed so that the dialog's width and the chips' positions do not change unintentionally.",
+      "Production: In the dialog for the disruption editing, there is now a space between the dialog's title and the disruption's name."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "11/30/2023",
+    "version": "v23.48.5-4",
+    "changes": [
+      "Security: API endpoints are restricted based on the rights assigned to the respective roles.",
+      "Production: Units appears connected in the side navigation bar.",
+      "Production: Actual Count calculation has been modified for the units connected to machines.",
+      "Shopfloor dashboard: Morning, afternoon and night are now visible.",
+      "Shopfloor dashboard: Only show teams that are part of a unit."
+    ],
+    "fixes": [
+      "Production: Possible to filter teams in the previous section for the reported disruptions.",
+      "Production: Disruption finder now appears in the correct tab.",
+      "Shopfloor dashboard: Disruptions are correctly joined to actualcount.",
+      "Dashboard: Proper embedding of Quicksight dashboards."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "11/14/2023",
+    "version": "v23.46.3-4",
+    "changes": [
+      "Production: Actual count will be shown.",
+      "Production: Get information on the reported disruptions.",
+      "Dashboard: NULL value is not shown anymore."
+    ],
+    "fixes": [
+      "Production: Disruptions are searchable for previous Teams.",
+      "Production: Chips are clickable if category and cause contain the same text.",
+      "Team-Monitor: Cycle disruptions do always appear on team monitor.",
+      "Dashboard: Previous shift shows always data again."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "11/02/2023",
+    "version": "v23.44.5-8",
+    "changes": [
+      "Dashboard shop floor: new team filter.",
+      "Dashboard long-term: m100 number available.",
+      "Dashboard: labels and tooltips are now in German.",
+      "Production: Autocomplete available for measures in the disruption dialog.",
+      "Production: Different filters applied to my team and previous teams."
+    ],
+    "fixes": [
+      "Production: QRK templates from older teams are searchable again.",
+      "Dashboard long-term: disruptions are shown again on the long-term dashboard.",
+      "Dashboard shop floor: Time and duration columns are now correct.",
+      "Production: autocomplete of measures works again.",
+      "Production: Other Disruption counter filters by the selected team.",
+      "Production: When creating templates, Other Disruption titles aren't allowed anymore.",
+      "Dashboard: Weeks are correct again for OEE.",
+      "Measures: When creating a measure, no more reloads are happening."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "10/23/2023",
+    "version": "v23.43.0-2",
+    "changes": [],
+    "fixes": [
+      "Production: Standard users can now see Reported Disruptions from selected Team.",
+      "Production: Disruptions can be now reported at 00:00."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "10/20/2023",
+    "version": "v23.42.4-4",
+    "changes": [
+      "Team Monitor: The current team can see disruptions reported by theirs and by following teams. Additionally you can find the M100 number in the disruption table.",
+      "Production: There is now an option to show the details of a reported disruption.",
+      "Production: When reporting a disruption and entering measures, there is an autocomplete based on existing measures of the unit.",
+      "Dashboard: Issue specification has been added to the dashboard."
+    ],
+    "fixes": [
+      "Measure Management: When creating a measure report, the input data is not disappearing anymore.",
+      "Dashboard: Wrong column namings for the shop floor dashboard have been adjusted.",
+      "Dashboard: The description on the pareto's x-axis matches the one on the tooltip now.",
+      "Dashboard: Both, the long term dashboard and shop floor dashboard show all disruptions again."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "10/06/2023",
+    "version": "v23.40.3-0",
+    "changes": [
+      "Production: As a manager or admin, you can now set different disruption template filters for your team and previous teams.",
+      "Dashboard: A new dashboard for the shop floor was added.",
+      "Admin: If there are available machines, they can now be connected to units in i.Process."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "09/26/2023",
+    "version": "v23.39.0-1",
+    "fixes": [
+      "Now the m100 number is optional."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "09/22/2023",
+    "version": "v23.38.5-7",
+    "changes": [
+      "Production: You can set a status for a disruption.",
+      "Production: Adding the M100 number to a disruption is now possible.",
+      "Production: The 'all disruption' filter shows only disruption templates that are linked to the team.",
+      "Production: Disruption templates for my team and previous teams can now be prioritized.",
+      "Production: When creating QRK templates, you have an auto completion for the template description."
+    ],
+    "fixes": [
+      "The correct delta is now shown in case the actual counts are 0.",
+      "Adding and editing a new measurement works correctly again.",
+      "Opening a dialog in the production app does not change the URL anymore.",
+      "Admin: When deleting a unit, the linked grouping is now still visible again.",
+      "It doesn't happen anymore, that the content of the disruption dialog disappears while creating or editing a disruption.",
+      "Team Monitor: Standard users can see all their according teams again in the dropdown.",
+      "UI improvements in the production and team monitor app."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "09/14/2023",
+    "version": "v23.37.0-1",
+    "fixes": [
+      "Adding and editing a new measurement does work again."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "09/04/2023",
+    "version": "v23.36.0-1",
+    "fixes": [
+      "All Cycle/Station per team are displayed again in the admin."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "08/31/2023",
+    "version": "v23.35.9-1",
+    "changes": [
+      "Team Monitor: You can navigate, select groupings and only assembly lines units.",
+      "Team Monitor: A information message is shown that no shift is started.",
+      "Team Monitor: You can select your team in the top bar.",
+      "Team Monitor: You see a summary of the shifts status.",
+      "Team Monitor: There is one bar chart that shows the top 5 disruptions of the current shift.",
+      "Team Monitor: There is another bar chart that shows the top 3 Disruptions of the previous shift.",
+      "Team Monitor: There is a table that shows the latest disruptions reported for the selected team.",
+      "Team Monitor: Most recent (within the last 5 minutes) disruptions are highlighted by a blinking red dot.",
+      "Team Monitor: There is a counter that shows the amount of most recent disruptions."
+    ],
+    "fixes": [
+      "Pareto bar labels are now formatted correctly."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "08/25/2023",
+    "version": "v23.34.0-2",
+    "fixes": [
+      "OEE data is now shown.",
+      "Performance increases for navigation and search of disruption templates"
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "08/09/2023",
+    "version": "v23.32.10-2",
+    "changes": [
+      "You can now define teams for Assembly lines in the Admin app.",
+      "Teams can be selected for Assembly lines.",
+      "QRK are allowed to add a disruption for a previous team in Assembly lines.",
+      "Originator can be selected when creating a disruption template for previous teams.",
+      "Previous team disruption templates are shown in the Production app.",
+      "Originator and Reporter team info are shown when reporting a disruption for previous teams.",
+      "Previous team templates show Originator information and a counter with total disruptions.",
+      "Search input works for previous team templates",
+      "New team monitor card is shown in the Landing page.",
+      "Disruption template cards can be edited"
+    ],
+    "fixes": [
+      "Other disruption counter is fixed.",
+      "Pareto lambda timeout is fixed."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "07/27/2023",
+    "version": "v23.30.4-1",
+    "changes": [
+      "You can now select all disruptions in the filter from iProcess production.",
+      "Admins and Managers can now prioritise disruption templates.",
+      "Photos can be uploaded when reporting disruptions.",
+      "Photos can be downloaded when reviewing disruptions."
+    ],
+    "fixes": [
+      "OEE data is now shown."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "07/14/2023",
+    "version": "v23.28.4-3",
+    "changes": [
+      "You can now search for disruption templates.",
+      "When creating disruption templates, you can also add issue specifications now.",
+      "Given you use a disruption template with issue specifications for creating a new disruption, you can select one or more issue specifications.",
+      "In the 'report disruption' tab, there is now an info button with hints on how to use the app regarding this specific area."
+    ],
+    "fixes": [
+      "Updating units with a lot of Cycle/Station entries is now working smoother.",
+      "A validation issue in the context of updating or creating shift models has been fixed.",
+      "The Pareto diagram is now showing all data again."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "06/30/2023",
+    "version": "v23.26.0-2",
+    "changes": [],
+    "fixes": [
+      "Duplicated shift models are now set to 'inactive' by default.",
+      "An issue regarding the validation of the start and end time in the shift configuration dialog has been fixed."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "06/16/2023",
+    "version": "v23.24.15-17",
+    "changes": [],
+    "fixes": [
+      "Starting of the Night Shift is possible again."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "06/15/2023",
+    "version": "v23.24.15-16",
+    "changes": [],
+    "fixes": [
+      "i.Process works on Zebra Tablets again."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "06/14/2023",
+    "version": "v23.24.15-15",
+    "changes": [
+      "Improve UX for Shift Model form in Admin.",
+      "Update reported disruption table in Production.",
+      "Change order of columns in the Pareto diagram.",
+      "Align logic of counting Actual Counts for Assembly Lines.",
+      "Remove dependencies across shifts for the Actual Counts.",
+      "Start and reset of a past shift is now possible for the two last shifts.",
+      "Add filter for measure report list.",
+      "Now possible to add quantities lost in disruption dialog.",
+      "The app recognizes your browser language. This should improve 'translator' problems.",
+      "News are now divided into changelog of all versions and changelog popup of current version.",
+      "Quicker loading of the Pareto diagram.",
+      "Quicker calculation of the Shift Output.",
+      "Improve app performance for shorter loading time of data.",
+      "Cycle/Stations can be ordered in the Unit Dialog.",
+      "Measure Reports can now be edited directly from the Dashboard."
+    ],
+    "fixes": [
+      "When there are a lot disruptions and templates, they get loaded more reliable.",
+      "Users without authorization can not access i.Process apps anymore.",
+      "Rejections are no longer shown in two timeslots.",
+      "Manufacturer entry can now be removed in the Unit dialog in Admin.",
+      "Shift Model form validation is now fixed.",
+      "Cycle/stations can now be added again for all units in Admin.",
+      "Duplicate shift model is now working as expected.",
+      "Winter- and summertime is now corrected in the Dashboard.",
+      "Deleting a Unit does no longer affect the product dialog in Admin",
+      "The Quota gets now calculated correctly.",
+      "In the Disruption dialog, the current time is used. If the user is in a past Timetab, the past time will be used.",
+      "The Output gets now calculated correctly.",
+      "Starting a shift with an inactive shift model is no longer possible.",
+      "Underscores are now allowed in all input fields.",
+      "Removing one Cycle/Station in the Unit admin does no longer lead to multiple Cycle/Station deletes."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "02/24/2023",
+    "version": "v23.8.1-5",
+    "changes": [
+      "The rejected and disruption card counter is calculated at shift level instead of the whole day."
+    ],
+    "fixes": [
+      "Switching between units no longer results in missing values.",
+      "Assembly lines show correct 'actual' piece counts.",
+      "New units can be assigned to a product even if already assigned units have been deleted.",
+      "The cycle and station filter now takes effect separately per unit.",
+      "After updating an unit name, it appears under a new name in the dashboard. Old data is assigned to the new name."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "02/16/2023",
+    "version": "v23.7.5-4",
+    "changes": [
+      "Actual Counts can be reported as range for assembly lines",
+      "Actual Counts can be reported through the new tab navigation",
+      "Rejects can be viewed, edited and deleted via the new tab 'Quantities'",
+      "Within the Dashboard you can see the defective type",
+      "The Dashboard can be used with one scrollbar instead of two"
+    ],
+    "fixes": [
+      "More that 100 cycle/stations can be added within the iProcess Admin",
+      "A unit without a name can not be created",
+      "Disruptions for a past shift are shown correctly",
+      "Measures can be re-prioritised with drag & drop on the tablet as well"
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "01/23/2023",
+    "version": "v23.4.3-1",
+    "changes": [
+      "The dashboard displays the top 5 faults, each in a Pareto for frequency and frequency.",
+      "Top faults can be selected in the Pareto chart and an action report can be generated.",
+      "Incidents entered are updated in real time - no need for browser refresh.·"
+    ],
+    "fixes": [
+      "Faults are assigned to the correct shift in the dashboard."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "01/05/2023",
+    "version": "v23.1.6-2",
+    "changes": [
+      "The sidebar for the i.Process production has the possibility to be minimized.",
+      "The additional login for the dashboard is no longer required.",
+      "The login form has been changed to a slimmer version.",
+      "A responsible sub-department can now be defined for a measure."
+    ],
+    "fixes": [
+      "Improvements in showing the disruptions between shifts.",
+      "Corrected behavour in the sidebar navigation when closing dialogs."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "12/28/2022",
+    "version": "v22.52.7-4",
+    "changes": [
+      "The rejects and iO is now displayed for the current hour.",
+      "'Part' has been renamed to 'Product'."
+    ],
+    "fixes": [
+      "Rejects are now correctly displayed across hours.",
+      "If no image is uploaded in the admin for NiO acquisition, a suitable form (without image) is offered in Production.",
+      "Shift type mapping has been corrected and should be displayed correctly in the dashboard for future captures.",
+      "OEE values are now displayed in the dashboard for Performance and Quality."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "12/14/2022",
+    "version": "v22.50.7-1",
+    "changes": [
+      "The Dashboard can now group the disruptions based on shift type (e.g. Morning Shift).",
+      "i.Process Production now uses start time instead of end time when reporting a disruption.",
+      "i.Process Admin is now able to add a shift change after 9 production time slots."
+    ],
+    "fixes": [
+      "Now all units are shown in i.Process Admin."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "12/02/2022",
+    "version": "v22.48.0-4",
+    "changes": [],
+    "fixes": [
+      "Counting of rejects and disruptions is now independent of the change of day. A reject or a disruption can now be recorded before midnight, for example, and is still counted in the 'tile' after midnight.",
+      "For the assembly line: Shift configurator now calculates the quota of pieces correctly, i.e. with proportional output.",
+      "In Admin: In the shift configuration, downtime can no longer be set in non-production times.",
+      "Many small improvements in the UI."
+    ]
+  },
+  {
+    "author": "Admin",
+    "date": "11/11/2022",
+    "version": "v22.45.0-1",
+    "changes": [],
+    "fixes": [
+      "Disruption templates are not visible after you created it"
+    ]
+  }
+]

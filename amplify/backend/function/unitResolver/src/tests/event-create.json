@@ -1,0 +1,37 @@
+{
+  "arguments": {
+    "put": {
+      "name": "main Unit",
+      "shortName": "MU-1",
+      "type": "assemblyLine",
+      "manufacturer": "",
+      "speedModes": [
+        {
+          "M": {
+            "name": {
+              "S": "2,5 / min"
+            },
+            "value": {
+              "N": "60"
+            },
+            "id": {
+              "S": "re6lnqh1I14655-4RsFoi"
+            }
+          }
+        }
+      ],
+      "m100Range": {
+        "min": 1,
+        "max": 999
+      },
+      "cycleStations": [
+        {
+          "id": "bca5760d-2bbf-43fc-95b2-e4ce73e14a57",
+          "name": "Main Segment",
+          "index": 1,
+          "isActive": "yes"
+        }
+      ]
+    }
+  }
+}

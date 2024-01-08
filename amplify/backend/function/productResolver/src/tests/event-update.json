@@ -1,0 +1,15 @@
+{
+  "arguments": {
+    "put": {
+      "id": "1f11fd0c-ea6a-4b1b-8a42-8a4d56276f74",
+      "name": "part-name",
+      "number": "part-number",
+      "unitsConfig": [
+        {
+          "unitId": "14c6aa50-ef1c-4d73-8680-d507bb09354a",
+          "targetCycleTime": 50
+        }
+      ]
+    }
+  }
+}

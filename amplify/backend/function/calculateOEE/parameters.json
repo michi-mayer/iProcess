@@ -1,0 +1,9 @@
+{
+  "apiGraphQLAPIIdOutput": {
+    "Fn::GetAtt": [
+      "apierfassungsapp",
+      "Outputs.GraphQLAPIIdOutput"
+    ]
+  },
+  "CloudWatchRule": "rate(15 minutes)"
+}

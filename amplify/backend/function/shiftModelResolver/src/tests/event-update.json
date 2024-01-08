@@ -1,0 +1,24 @@
+{
+  "arguments": {
+    "put": {
+      "id": "080354bd-3757-4d11-8a81-77185b698ebe",
+      "name": "Shift Model A",
+      "timeZone": "Europe/Berlin",
+      "isActive": "yes",
+      "unitIds": [
+        "64cf0d25-8f2b-450f-88fd-96c9653fa665",
+        "43d809e3-279b-4034-960e-3abc045d8f3c"
+      ],
+      "scheduleHours": [
+        {
+          "shiftType": "morningShift",
+          "type": "Production",
+          "hoursStartUTC": "05:30:00.000",
+          "hoursEndUTC": "07:30:00.000",
+          "timeZone": "Europe/Berlin",
+          "i": 0
+        }
+      ]
+    }
+  }
+}

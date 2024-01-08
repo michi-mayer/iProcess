@@ -1,0 +1,100 @@
+aws kinesis put-record \
+    --stream-name actualcount \
+    --data ewogICJpZCI6ICIxMjMyIiwKICAiY3JlYXRlZEF0IjogIjIwMjItMDktMjBUMDM6MDI6MzAuMjQyWiIsCiAgInBhcnRJZCI6ICI2MmJkMzcxMS01MzgzLTQyNWUtOGEyYy1kZGQyZDcyN2I5NGEiLAogICJxdW90YSI6ICI5MCIsCiAgImFjdHVhbGNvdW50IjogIjgwIiwKICAic2hpZnQiOiAibmlnaHRTaGlmdCIsCiAgInRpbWVab25lIjogIkV1cm9wZS9CZXJsaW4iLAogICJ0eXBlIjogIlByb2R1Y3Rpb24iLAogICJ1bml0SWQiOiAiN2NkMGM0MDgtZTYxOS00MWVlLTEyMzQtNTQzMTdhYWY0MTFlIgp9 \
+    --partition-key samplepartitionkey
+
+
+aws kinesis put-record \
+    --stream-name actualcount \
+    --data ewogICJpZCI6ICIxMjMzIiwKICAiY3JlYXRlZEF0IjogIjIwMjItMDktMjBUMDM6MDk6MzAuMjQyWiIsCiAgInBhcnRJZCI6ICI2MmJkMzcxMS01MzgzLTQyNWUtOGEyYy1kZGQyZDcyN2I5NGEiLAogICJxdW90YSI6ICI4MCIsCiAgImFjdHVhbGNvdW50IjogIjgwIiwKICAic2hpZnQiOiAibW9ybmluZ1NoaWZ0IiwKICAidGltZVpvbmUiOiAiRXVyb3BlL0JlcmxpbiIsCiAgInR5cGUiOiAiUHJvZHVjdGlvbiIsCiAgInVuaXRJZCI6ICI3Y2QwYzQwOC1lNjE5LTQxZWUtMTIzNC01NDMxN2FhZjQxMWUiCn0= \
+    --partition-key samplepartitionkey
+
+aws kinesis put-record \
+    --stream-name actualcount \
+    --data ewogICJpZCI6ICIxMjM0IiwKICAiY3JlYXRlZEF0IjogIjIwMjItMDktMjBUMTg6MDI6MzAuMjQyWiIsCiAgInBhcnRJZCI6ICI2MmJkMzcxMS01MzgzLTQyNWUtOGEyYy1kZGQyZDcyN2I5NGEiLAogICJxdW90YSI6ICIxMDAiLAogICJhY3R1YWxjb3VudCI6ICI4MCIsCiAgInNoaWZ0IjogImFmdGVybm9vblNoaWZ0IiwKICAidGltZVpvbmUiOiAiRXVyb3BlL0JlcmxpbiIsCiAgInR5cGUiOiAiUHJvZHVjdGlvbiIsCiAgInVuaXRJZCI6ICI3Y2QwYzQwOC1lNjE5LTQxZWUtMTIzNC01NDMxN2FhZjQxMWUiCn0= \
+    --partition-key samplepartitionkey
+
+    49637004214213963258658585790303989918418935658158489634
+
+    49636908972191369374076701676487601858280129441541652514
+
+
+    {'Records': [{'kinesis': {'kinesisSchemaVersion': '1.0', 'partitionKey': 'samplepartitionkey', 'sequenceNumber': '49636908972191369374076734126965275836921109190222544930', 'data': 'ewogICJpZCI6ICIxMjMyIiwKICAiY3JlYXRlZEF0IjogIjIwMjItMDktMjBUMDM6MDI6MzAuMjQyWiIsCiAgInBhcnRJZCI6ICI2MmJkMzcxMS01MzgzLTQyNWUtOGEyYy1kZGQyZDcyN2I5NGEiLAogICJxdW90YSI6ICI4MCIsCiAgImFjdHVhbGNvdW50IjogIjgwIiwKICAic2hpZnQiOiAibmlnaHRTaGlmdCIsCiAgInRpbWVab25lIjogIkV1cm9wZS9CZXJsaW4iLAogICJ0eXBlIjogIlByb2R1Y3Rpb24iLAogICJ1bml0SWQiOiAiN2NkMGM0MDgtZTYxOS00MWVlLTEyMzQtNTQzMTdhYWY0MTFlIgp9', 'approximateArrivalTimestamp': 1673356040.17}, 'eventSource': 'aws:kinesis', 'eventVersion': '1.0', 'eventID': 'shardId-000000000002:49636908972191369374076734126965275836921109190222544930', 'eventName': 'aws:kinesis:record', 'invokeIdentityArn': 'arn:aws:iam::465477822022:role/service-role/actualcount-kinesis-consumer-role-8vp7yoh2', 'awsRegion': 'eu-west-1', 'eventSourceARN': 'arn:aws:kinesis:eu-west-1:465477822022:stream/actualcount'}]}
+
+
+
+{
+  "id": "1232",
+  "createdAt": "2022-09-20T03:02:30.242Z",
+  "partId": "62bd3711-5383-425e-8a2c-ddd2d727b94a",
+  "quota": "90",
+  "actualcount": "80",
+  "shift": "nightShift",
+  "timeZone": "Europe/Berlin",
+  "type": "Production",
+  "unitId": "7cd0c408-e619-41ee-1234-54317aaf411e"
+}
+
+{
+  "id": "1233",
+  "createdAt": "2022-09-20T03:09:30.242Z",
+  "partId": "62bd3711-5383-425e-8a2c-ddd2d727b94a",
+  "quota": "80",
+  "actualcount": "80",
+  "shift": "morningShift",
+  "timeZone": "Europe/Berlin",
+  "type": "Production",
+  "unitId": "7cd0c408-e619-41ee-1234-54317aaf411e"
+}
+
+{
+  "id": "1234",
+  "createdAt": "2022-09-20T18:02:30.242Z",
+  "partId": "62bd3711-5383-425e-8a2c-ddd2d727b94a",
+  "quota": "100",
+  "actualcount": "80",
+  "shift": "afternoonShift",
+  "timeZone": "Europe/Berlin",
+  "type": "Production",
+  "unitId": "7cd0c408-e619-41ee-1234-54317aaf411e"
+}
+
+{
+  "id": {
+    "S": "1234"
+  },
+  "createdAt": {
+    "S": "2022-09-20T07:09:24.242Z"
+  },
+  "partId": {
+    "S": "62bd3711-5383-425e-8a2c-ddd2d727b94a"
+  },
+  "quota": {
+    "N": "120"
+  },
+  "actualcount": {
+    "N": "100"
+  },
+  "shift": {
+    "S": "morningShift"
+  },
+  "timeZone": {
+    "S": "Europe/Berlin"
+  },
+  "type": {
+    "S": "Production"
+  },
+  "unitId": {
+    "S": "7cd0c408-e619-41ee-be66-54317aaf411e"
+  }
+}
+
+{
+    "ShardId": "shardId-000000000002",
+    "SequenceNumber": "49636892890677991809669947658819923754246249579859148834"
+}
+
+{
+    "ShardId": "shardId-000000000002",
+    "SequenceNumber": "49636892890677991809669947658821132680065869500433563682"
+}

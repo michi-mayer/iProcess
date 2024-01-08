@@ -1,0 +1,107 @@
+[
+  {
+    "Name": "datetimeutc",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "datetimelocal",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "datetimelocalvwday",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "unitname",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "partid",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "shift",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "shiftgerman",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "count",
+    "Type": "int",
+    "Comment": ""
+  },
+  {
+    "Name": "timezone",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "partname",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "createdat",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "deleted",
+    "Type": "boolean",
+    "Comment": ""
+  },
+  {
+    "Name": "unitid",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "partnumber",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "id",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "updatedat",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "defectivecause",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "defectivegrid",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "defectivelocation",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "defectivetype",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "datetimelocalvwday_day",
+    "Type": "string",
+    "Comment": ""
+  }
+]

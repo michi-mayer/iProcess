@@ -1,0 +1,14 @@
+[
+  {
+    "Name": "id",
+    "Type": "string"
+  },
+  {
+    "Name": "name",
+    "Type": "string"
+  },
+  {
+    "Name": "isactive",
+    "Type": "string"
+  }
+]

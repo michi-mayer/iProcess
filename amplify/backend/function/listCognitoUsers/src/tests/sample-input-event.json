@@ -1,0 +1,10 @@
+{
+  "arguments": {
+    "input": {
+      "attributes": [
+        "sub",
+        "custom:subdepartment"
+      ]
+    }
+  }
+}

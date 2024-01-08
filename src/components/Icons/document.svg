@@ -1,0 +1,10 @@
+<svg id="icons_document_document-24" data-name="icons/document/document-24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="icon" d="M13.5,16H.5a.5.5,0,0,1-.5-.5V.5A.5.5,0,0,1,.5,0h10a.5.5,0,0,1,.354.147l3,3A.5.5,0,0,1,14,3.5v12A.5.5,0,0,1,13.5,16ZM1,1V15H13V4H10.5a.5.5,0,0,1-.5-.5V1Zm10,.707V3h1.293ZM10,12H4V11h6v1ZM9,9H4V8H9V9ZM7,6H4V5H7V6Z" transform="translate(0 0)" fill="#20607e"/>
+    </clipPath>
+  </defs>
+  <g id="Group_108" data-name="Group 108" transform="translate(5 4)">
+    <path id="icon-2" data-name="icon" d="M13.5,16H.5a.5.5,0,0,1-.5-.5V.5A.5.5,0,0,1,.5,0h10a.5.5,0,0,1,.354.147l3,3A.5.5,0,0,1,14,3.5v12A.5.5,0,0,1,13.5,16ZM1,1V15H13V4H10.5a.5.5,0,0,1-.5-.5V1Zm10,.707V3h1.293ZM10,12H4V11h6v1ZM9,9H4V8H9V9ZM7,6H4V5H7V6Z" transform="translate(0 0)" fill="#20607e"/>
+  </g>
+</svg>

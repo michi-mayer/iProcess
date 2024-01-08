@@ -1,0 +1,15 @@
+# Ignore artifacts:
+build
+coverage
+
+# Files related to GraphQL
+*.graphql
+src/API.ts
+src/graphql/mutations.ts
+src/graphql/queries.ts
+src/graphql/subscriptions.ts
+amplify/backend/function/iProcessLambdaShared/opt/iprocess-shared/graphql/*
+
+# Tests
+amplify/backend/function/*/src/coverage
+amplify/backend/function/iProcessLambdaShared/opt/iprocess-shared/coverage

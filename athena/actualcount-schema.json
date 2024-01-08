@@ -1,0 +1,162 @@
+[
+  {
+    "Name": "unitname",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "partid",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "shift",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "shiftgerman",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "timezone",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "type",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "partname",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "createdat",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "soll",
+    "Type": "int",
+    "Comment": ""
+  },
+  {
+    "Name": "unitid",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "datetimeendutc",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "endtimedatelocal",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "endtimedatelocalvwday",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "partnumber",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "configurationid",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "id",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "shiftmodelid",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "datetimestartutc",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "starttimedatelocal",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "starttimedatelocalvwday",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "updatedat",
+    "Type": "timestamp",
+    "Comment": ""
+  },
+  {
+    "Name": "ist",
+    "Type": "int",
+    "Comment": ""
+  },
+  {
+    "Name": "starttimedatelocalvwday_day",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "ausschuss",
+    "Type": "int",
+    "Comment": ""
+  },
+  {
+    "Name": "defectiveid",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "defectivegrid",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "defectivelocation",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "defectivecause",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "defectivetype",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "delta",
+    "Type": "int",
+    "Comment": ""
+  },
+  {
+    "Name": "vehiclenumber",
+    "Type": "string",
+    "Comment": ""
+  },
+  {
+    "Name": "split",
+    "Type": "string",
+    "Comment": ""
+  }
+]

@@ -1,0 +1,54 @@
+version: 1
+env:
+  variables:
+    IS_CI_CD: true
+backend:
+  phases:
+    preBuild:
+      commands:
+        - nvm use 18
+        - npm ci # ? installs all dependencies and checks they match with the lockfile
+    build:
+      commands:
+        # ? Execute Amplify CLI with the helper script. This command also runs the pre-push hook (amplify/hooks/pre-push)
+        # ? https://docs.amplify.aws/cli/project/command-hooks/#using-command-hooks-in-amplifys-cicd-pipeline
+        - amplifyPush --simple
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm use 18
+        - npm run frontend:check
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+test:
+  phases:
+    preTest:
+      commands:
+        - echo "Using NodeJS version $(node -v)"
+        - npm ci # ? installs all dependencies and checks they match with the lockfile
+        - mv cypress.env.dev.json cypress.env.json
+        - npx pm2 start "npm run serve" --name iProcess
+        - npx pm2 l
+        - npx wait-on --timeout 15000 http://localhost:3000
+    test:
+      commands:
+        - npm run cy || true
+    postTest:
+      commands:
+        - npx mochawesome-merge cypress/report/mochawesome-report/mochawesome*.json -o cypress/report/mochawesome.json
+        - npx marge cypress/report/mochawesome.json --reportDir cypress/report
+        - npx pm2 kill
+  artifacts:
+    baseDirectory: cypress
+    configFilePath: '**/mochawesome.json'
+    files:
+      - '**/*'

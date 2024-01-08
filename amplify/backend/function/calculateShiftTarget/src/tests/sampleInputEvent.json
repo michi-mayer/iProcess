@@ -1,0 +1,10 @@
+{
+  "arguments": {
+    "input": {
+      "shiftModelId": "1ca67de8-4cce-4b4a-bed7-d630a05adaef",
+      "shiftType": "morningShift",
+      "cycleTime": 60,
+      "speedMode": 390
+    }
+  }
+}

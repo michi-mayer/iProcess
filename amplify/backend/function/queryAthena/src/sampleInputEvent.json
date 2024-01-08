@@ -1,0 +1,86 @@
+{
+  "arguments": {
+    "input": {
+      "startDate": "2022-07-13",
+      "endDate": "2023-01-13",
+      "shifts": [
+        "morningShift",
+        "afternoonShift",
+        "nightShift"
+      ],
+      "unitIds": [
+        "69af497d-7564-4c25-8bb1-7961ea2ac6f8",
+        "c5e63f76-b429-47e0-a9be-00670965de47",
+        "8ef44c35-aeb8-4646-a708-ae96cc5f71bb",
+        "dba75124-5372-4793-beff-0398e88e4b1f",
+        "84671723-fb85-4096-942f-8831a9345e01",
+        "50c5dfce-66b7-4df4-a0ab-15bbd7232fb0",
+        "b896b925-bbb3-4e9c-90d1-2787c382349a",
+        "4a55d8ad-ca5b-4f37-9dcb-fb678c5c53c9",
+        "68121993-6b6a-4106-9367-3531b7b54d23",
+        "56ec32e0-0a31-4af1-a325-5cd9006e4727",
+        "3118a996-f1a2-4dd7-83c4-e9a913376812",
+        "9ca88dfa-f81b-4be0-b867-adf3d5a93f25",
+        "05c99f46-b85d-480b-ae03-3630366079ed",
+        "40613e74-8b88-4969-b6ad-fc9a1854d1ad",
+        "83f3e7ef-d865-4083-b73e-6567cd3b2dd1",
+        "c24ab0ec-0b20-404a-bfcd-1a06a6569a22",
+        "772972ed-a827-4380-a3ae-7e557d4d9569",
+        "cb5837be-7d92-4aaf-80ef-9919287e2c21",
+        "99c8e889-73b3-4814-a774-3523bbf91035",
+        "a6334027-c7d5-4259-80f3-13260f444fa9",
+        "2a550c10-2d26-4108-85e2-e2cbf8391a96",
+        "cd2bb9bb-b16c-4dac-be5e-c864cb3ffdc5",
+        "7cd0c408-e619-41ee-be66-54317aaf411e"
+      ],
+      "disruptionCategories": [
+        "Category 1",
+        "Category 2",
+        "Category 3",
+        "Maschine",
+        "Mensch",
+        "Methode",
+        "Mitwelt"
+      ],
+      "disruptionDescriptions": [
+        "C1 Reason 1",
+        "C1 Reason 2",
+        "C1 Reason 3",
+        "C1 Reason 4",
+        "C1 Reason 5",
+        "C2 Reason 1",
+        "C3 Reason 1",
+        "C3 Reason 2",
+        "C3 Reason3",
+        "C3 Reason 4",
+        "C3 Reason 5",
+        "Anlage",
+        "Supermarkt",
+        "Nutzungsfehler",
+        "Roboter",
+        "Qualifikation",
+        "C2 Reason 2",
+        "C2 Reason 3",
+        "C2 Reason 4",
+        "C2 Reason 5"
+      ],
+      "disruptionTypes": [
+        "C1 R1 Type 1",
+        "C1 R1 Type 2",
+        "C1 R1 Type 3",
+        "C1 R3 Type 1",
+        "C1 R3 Type 2",
+        "C1 R3 Type 3",
+        "C1 R3 Type 4",
+        "C1 R5 Type 1",
+        "C1 R5 Type 2",
+        "C1 R5 Type 3",
+        "C1 R5 Type 4",
+        "elektrisch",
+        "Kommisionierfehler",
+        "Pneumatisch",
+        "C2 R1 Type 1"
+      ]
+    }
+  }
+}

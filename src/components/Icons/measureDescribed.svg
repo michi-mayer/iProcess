@@ -1,0 +1,17 @@
+<svg id="measure-described-16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="icon" d="M0,8a8,8,0,1,1,8,8A8.009,8.009,0,0,1,0,8Zm7.6,7.189V8.4H.811A7.21,7.21,0,0,0,7.6,15.189Zm.8,0A7.21,7.21,0,0,0,15.189,8.4H8.4ZM15.189,7.6A7.21,7.21,0,0,0,8.4.811V7.6ZM7.6,7.6V.811A7.21,7.21,0,0,0,.811,7.6Z" fill="#20607e"/>
+    </clipPath>
+  </defs>
+  <g id="Group_85" data-name="Group 85" transform="translate(-1 -1)">
+    <g id="Group_1550" data-name="Group 1550">
+      <g id="Ellipse_375" data-name="Ellipse 375" transform="translate(2 2)" fill="none" stroke="#2f5f7c" stroke-width="1">
+        <circle cx="7" cy="7" r="7" stroke="none"/>
+        <circle cx="7" cy="7" r="6.5" fill="none"/>
+      </g>
+      <line id="Line_241" data-name="Line 241" y2="13" transform="translate(9 2.5)" fill="none" stroke="#20607e" stroke-width="1"/>
+      <line id="Line_242" data-name="Line 242" y2="13" transform="translate(15.5 9) rotate(90)" fill="none" stroke="#20607e" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

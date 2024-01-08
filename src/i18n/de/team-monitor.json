@@ -1,0 +1,18 @@
+{
+  "overview": {
+    "diagram": {
+      "currentShiftTitle": "Top 5 Störungen (Aktuelle Schicht)",
+      "disruption": "Störung",
+      "noDataMessage": "Es sind keine Daten vorhanden.",
+      "occurrences": "Mal",
+      "overallFrequency": "Gesamthäufigkeit",
+      "pastShiftTitle": "Top 3 Störungen (Vorangegangene Schicht)"
+    },
+    "disruptionList": {
+      "title": "Team Monitor",
+      "myTeam": "Mein Team",
+      "followingTeams": "Nachfolgende Teams"
+    },
+    "noShiftStartedBanner": "Es muss erst eine Schicht in der Produktionsanwendung gestartet werden."
+  }
+}

@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# ? Copy the shared utilities if they've been updated
+git diff --quiet --staged HEAD -- src/shared || npm run update-shared-code
+
+# ? Generate type definitions for GraphQL if it's been modified
+git diff --quiet --staged HEAD -- amplify/backend/api || npm run codegen
+
+# ? Checks if there's any source changes on 'amplify/' with respect to the last commit, and if so runs 'check:backend'
+git diff --quiet --staged HEAD -- amplify/backend/function ||
+  (npm run backend:setup && (
+    npm run backend:check:types &
+    npm run backend:check:lint
+  ))
+
+# ? Checks if there's any source changes on 'src/' with respect to the last commit, and if so runs 'lint-staged'
+git diff --quiet --staged HEAD -- src || (
+  npm run frontend:check:lint &
+  npm run frontend:check:types &
+  npm run cy:check
+)

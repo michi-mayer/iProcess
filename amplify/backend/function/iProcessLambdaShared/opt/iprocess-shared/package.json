@@ -1,0 +1,22 @@
+{
+  "name": "iprocess-shared",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Packages shared amongst all lambda functions",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "@aws-crypto/sha256-js": "2.0.1",
+    "@fast-csv/parse": "4.3.6"
+  },
+  "scripts": {
+    "clean": "rm -f $npm_package_config_files_js || true",
+    "build:before": "npm run clean & npm install --production=false",
+    "build": "esbuild --outdir=. $npm_package_config_files_ts",
+    "build:after": "npm install --production=true"
+  },
+  "config": {
+    "files_ts": "*.ts utils/*.ts shared/*.ts database/*.ts graphql/*.ts graphql/**/*.ts",
+    "files_js": "*.js utils/*.js shared/*.js database/*.js graphql/*.js graphql/**/*.js"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "arguments": {
+    "put": {
+      "id": "f7292137-199e-44e2-8d93-1feaff846c8e",
+      "description": "template id",
+      "templateId": "f2c2984e-a884-49c3-8a5d-02102906c68f",
+      "unitId": "1f11fd0c-ea6a-4b1b-8a42-8a4d56276f63",
+      "notes": "",
+      "firstOccurrence": "2022-10-24",
+      "productNumber": "Production Part",
+      "totalDuration": "00:10",
+      "frequency": 1,
+      "unitShortName": "K1",
+      "classifications": "[\"Category 2\",\"C2 Reason 2\"]",
+      "cycleStationName": "Unit-specific",
+      "isCritical": "no",
+      "progress": "Open",
+      "what": "",
+      "when": "2022-10-24",
+      "where": "",
+      "causes": "[{\"id\":\"14ee3d91-b6fa-4eff-a683-6daae4e5cb86\",\"cause\":\"die Hitze\"},{\"id\":\"254193fe-f3f9-43c1-9270-7c618558b71f\",\"cause\":\"el esmorzaet\"},{\"id\":\"36417de9-ea05-493b-afd0-5c5768301c7c\",\"cause\":\"too many pints\"}]",
+      "measures": []
+    }
+  }
+}

@@ -1,0 +1,26 @@
+## Definition of Done (DoD)
+
+- During development:
+  - Acceptance criteria for the task is met
+  - Keep documentation up-to-date (tickets can be seen as documentation)
+    - For front-end changes, manual tests is used as (live) documentation
+- PR Review:
+  - Accepted by **at least 2 peers**
+  - Changes are covered by (meaningful) tests
+    - For back-end changes: By unit tests, and integration tests
+    - For front-end changes: By unit tests, and End-to-End tests
+    - Manual tests may be needed, but they **must be specified in the ticket**
+  - Code complies with the project's Software Architecture:
+    - Input data is validated
+    - It satisfies ESLint and Prettier style rules
+    - Exported classes, constants, and functions have a type definition
+    - Code redundancy is reduced where possible
+- UI Review:
+  - Should be done by the reference person (the reporter in Jira) from the Design team
+  - Reviews will be done in **MS Edge** for the desktop version and/or in the **Zebra emulator** for the tablet version.
+- Functional Review:
+  - Should be done by the PO (if available), or otherwise by the UI reviewer or any other member in the team
+  - Reviews will be done in **MS Edge** for the desktop version and/or in the **Zebra emulator** for the tablet version.
+- After the merge to default (`develop`) branch:
+  - Source changes are successfully deployed to the default (`develop`) branch
+  - Check there's no regression for E2E tests in the default (`develop`) branch; this is, the number of successful E2E tests between this deployment and the previous one is the same

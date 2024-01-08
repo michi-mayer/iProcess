@@ -1,0 +1,28 @@
+{
+  "version": "1",
+  "region": "eu-west-1",
+  "userPoolId": "eu-west-1_cwcxE8mAU",
+  "userName": "vwcloudidp_e4f5bd24-0be7-4205-9229-e67ddb926fc7",
+  "callerContext": {
+    "awsSdkVersion": "aws-sdk-unknown-unknown",
+    "clientId": "r0r34p51kqcfris6gh4audp7h"
+  },
+  "triggerSource": "PreAuthentication_Authentication",
+  "request": {
+    "userAttributes": {
+      "sub": "0ebba989-ac31-4055-b16a-8721ff762ef7",
+      "custom:subdepartment": "PWK-1/1",
+      "address": "PWK-1",
+      "cognito:user_status": "EXTERNAL_PROVIDER",
+      "identities": "[{\"userId\":\"e4f5bd24-0be7-4205-9229-e67ddb926fc7\",\"providerName\":\"VWCloudIdp\",\"providerType\":\"OIDC\",\"issuer\":null,\"primary\":true,\"dateCreated\":1701677264360}]",
+      "email_verified": "false",
+      "profile": "[\"VWAG_IPROCESS_MANAGER_PROD\"]",
+      "locale": "ES",
+      "given_name": "Joaquin",
+      "family_name": "Terrasa Moya",
+      "email": "joaquin.terrasamoya@maibornwolff.de"
+    },
+    "validationData": {}
+  },
+  "response": {}
+}

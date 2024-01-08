@@ -1,0 +1,56 @@
+{
+  "header": {
+    "overview": "Welcome to i.Process",
+    "changelog": "i.Process Changelog"
+  },
+  "sidebar": {
+    "overview": "Overview",
+    "feedback": "Feedback",
+    "dataPrivacy": "Data Privacy",
+    "changelog": "Changelog"
+  },
+  "applications": {
+    "section": "Applications",
+    "production": "Production",
+    "rejected": "Rejected",
+    "teamMonitor": "Team Monitor",
+    "measures": "Measures",
+    "dashboard": "Dashboard",
+    "shiftDashboard": "Shift Dashboard",
+    "shopFloorDashboard": "Shopfloor Dashboard",
+    "longTermDashboard": "Longterm Dashboard",
+    "managementDashboard": "Management Dashboard",
+    "issueSpecificationDashboard": "Issue specification Dashboard",
+    "admin": "Admin",
+    "open": "Open",
+    "requestAccess": "Request Access",
+    "descriptions": {
+      "productionDescription": "Record actual counts, disruptions and rejects for a certain part and shift.",
+      "rejectedDescription": "Record and classify rejected products.",
+      "teamMonitorDescription": "Team Monitor for the Digital Error Mirroring (only assembly lines)",
+      "measuresDescription": "Define and track measures for disruptions and units.",
+      "dashboardDescription": "View evaluation of OEE, actual count target, downtime and quality for machine units.",
+      "shiftDashboardDescription": "",
+      "shopFloorDashboardDescription": "Day-by-Day evaluation of actual counts, disruptions and defects.",
+      "longTermDashboardDescription": "Week-by-week evaluation of actual counts, disruptions, OEE and defects.",
+      "managementDashboardDescription": "",
+      "issueSpecificationDashboardDescription": "",
+      "adminDescription": "Maintain master data for iProcess Production."
+    }
+  },
+  "changelog": {
+    "section": "News",
+    "showMore": "Show More",
+    "showLess": "Show Less",
+    "pagination": "Posts per page",
+    "paginationOf": "of",
+    "enhanced": "Enhanced",
+    "fixed": "Fixed",
+    "by": "By ",
+    "openChangelog": "Open Changelog",
+    "whatsNew": "What's new"
+  },
+  "dashboard": {
+    "goBack": "Back to iProcess Home"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "iProcessLambdaShared",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "develop"
+    }
+  ],
+  "permissions": {
+    "api": {
+      "erfassungsapp": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    "storage": {
+      "disruption:@model(appsync)": [
+        "read"
+      ],
+      "actualCount:@model(appsync)": [
+        "read"
+      ],
+      "Defective:@model(appsync)": [
+        "read"
+      ]
+    }
+  },
+  "environmentVariableList": []
+}
