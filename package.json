@@ -76,7 +76,7 @@
     "backend:analyze:dependencies": "madge --ts-config ./tsconfig.backend.json --extensions ts --circular amplify/backend/function",
     "frontend:setup": "run-p frontend:setup:*",
     "frontend:setup:format": "prettier --write --cache --log-level error -- src",
-    "frontend:check": "run-p frontend:check:*",
+    "frontend:check": "npm run prestart && run-p frontend:check:*",
     "frontend:check:lint": "eslint --cache --fix src",
     "frontend:check:types": "tsc -p tsconfig.json",
     "frontend:check:tests": "NODE_OPTIONS='--no-deprecation' TZ=Europe/Berlin vitest run --dir src",
