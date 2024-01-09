@@ -49,8 +49,9 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "start": "vite --force",
-    "build": "vite build",
+    "prestart": "cp -f src/aws-exports.js src/aws-exports.ts || true",
+    "start": "npm run prestart && vite --force",
+    "build": "npm run prestart && vite build",
     "build:analyze": "vite-bundle-visualizer",
     "serve": "serve -s build",
     "serve:docs": "docsify serve docs",

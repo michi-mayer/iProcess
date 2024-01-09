@@ -1,124 +1,120 @@
 {
-  "develop": {
+  "master": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-erfassungsapp-develop-65040-authRole",
-      "UnauthRoleArn": "arn:aws:iam::465477822022:role/amplify-erfassungsapp-develop-65040-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::465477822022:role/amplify-erfassungsapp-develop-65040-authRole",
+      "AuthRoleName": "amplify-erfassungsapp-master-160211-authRole",
+      "UnauthRoleArn": "arn:aws:iam::465477822022:role/amplify-erfassungsapp-master-160211-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::465477822022:role/amplify-erfassungsapp-master-160211-authRole",
       "Region": "eu-west-1",
-      "DeploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-      "UnauthRoleName": "amplify-erfassungsapp-develop-65040-unauthRole",
-      "StackName": "amplify-erfassungsapp-develop-65040",
-      "StackId": "arn:aws:cloudformation:eu-west-1:465477822022:stack/amplify-erfassungsapp-develop-65040/e37d8c70-4b7b-11ed-b32c-02c28ee23d37",
-      "AmplifyAppId": "ds585c653i06u"
+      "DeploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+      "UnauthRoleName": "amplify-erfassungsapp-master-160211-unauthRole",
+      "StackName": "amplify-erfassungsapp-master-160211",
+      "StackId": "arn:aws:cloudformation:eu-west-1:465477822022:stack/amplify-erfassungsapp-master-160211/488013f0-ae3f-11ee-8d59-028af72f31c7",
+      "AmplifyAppId": "d2a1fr7uv0qfmi"
     },
     "categories": {
       "auth": {
         "erfassungsapp373264a5": {}
       },
-      "storage": {
-        "images": {}
-      },
       "function": {
         "calculateOEE": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/calculateOEE-746d71364332356b3632-build.zip"
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/calculateOEE-582b50692b5971627447-build.zip"
         },
         "calculateShiftTarget": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/calculateShiftTarget-62535578443359485035-build.zip"
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/calculateShiftTarget-5466426f445153632f61-build.zip"
         },
         "createGrouping": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/createGrouping-4552736a586979667571-build.zip"
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/createGrouping-584f764942504e31676c-build.zip"
         },
         "createProblemClassification": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/createProblemClassification-466d7963384541363752-build.zip"
-        },
-        "deleteConfiguration": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/deleteConfiguration-767033482b4d794a7243-build.zip"
-        },
-        "deleteGrouping": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/deleteGrouping-32755a44682f35527258-build.zip"
-        },
-        "deleteProblemClassification": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/deleteProblemClassification-4a456750472f4f433344-build.zip"
-        },
-        "getLastConfigurationByUnit": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/getLastConfigurationByUnit-4d374a704d7835725a70-build.zip"
-        },
-        "getQuickSightURL": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/getQuickSightURL-32437251793233767156-build.zip"
-        },
-        "iProcessLambdaShared": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/iProcessLambdaShared-LambdaLayerVersion712de531-build.zip"
-        },
-        "listCognitoUsers": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/listCognitoUsers-382f3570787746517335-build.zip"
-        },
-        "measureReportResolver": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/measureReportResolver-78794b69625830644878-build.zip"
-        },
-        "queryAthena": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/queryAthena-6834434a545358376466-build.zip"
-        },
-        "startShift": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/startShift-64332f634c66454f7771-build.zip"
-        },
-        "updateConfigurationsAndActualCounts": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/updateConfigurationsAndActualCounts-665770687a422b6d7655-build.zip"
-        },
-        "updateGrouping": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/updateGrouping-4a41706b63635861564d-build.zip"
-        },
-        "updateProblemClassification": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/updateProblemClassification-6e674d2f673432634d53-build.zip"
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/createProblemClassification-386770326374704f6478-build.zip"
         },
         "dataScripts": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/dataScripts-76356c7249766e683242-build.zip"
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/dataScripts-4d6b4f6f2f717661476e-build.zip"
         },
-        "productResolver": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/productResolver-5a6553736c7135724836-build.zip"
+        "deleteConfiguration": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/deleteConfiguration-33343261396334577576-build.zip"
         },
-        "shiftModelResolver": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/shiftModelResolver-3466516f466f6c4d4370-build.zip"
+        "deleteGrouping": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/deleteGrouping-3139516a5370384f3672-build.zip"
         },
-        "unitResolver": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/unitResolver-6649584b563675387a33-build.zip"
+        "deleteProblemClassification": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/deleteProblemClassification-2b6941496b385a497a36-build.zip"
         },
         "disruptionResolver": {
-          "deploymentBucketName": "amplify-erfassungsapp-develop-65040-deployment",
-          "s3Key": "amplify-builds/disruptionResolver-564b5737646f5a68484f-build.zip"
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/disruptionResolver-63636d534d61732b4b75-build.zip"
         },
-        "machineResolver": {},
-        "updateCognitoGroupPreAuth": {}
+        "getLastConfigurationByUnit": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/getLastConfigurationByUnit-46323073666653706d46-build.zip"
+        },
+        "getQuickSightURL": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/getQuickSightURL-544d6748782f5a46584d-build.zip"
+        },
+        "iProcessLambdaShared": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/iProcessLambdaShared-LambdaLayerVersion6fbef0aa-build.zip"
+        },
+        "listCognitoUsers": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/listCognitoUsers-51376c3234615a515467-build.zip"
+        },
+        "machineResolver": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/machineResolver-74375a776239422f6f55-build.zip"
+        },
+        "measureReportResolver": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/measureReportResolver-576b66617963434f5061-build.zip"
+        },
+        "productResolver": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/productResolver-4659517a76655433466c-build.zip"
+        },
+        "queryAthena": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/queryAthena-4a57765238674d476d34-build.zip"
+        },
+        "shiftModelResolver": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/shiftModelResolver-4a664c4d30366e457653-build.zip"
+        },
+        "startShift": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/startShift-512b724355777a63706e-build.zip"
+        },
+        "unitResolver": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/unitResolver-5461474b484639327a79-build.zip"
+        },
+        "updateCognitoGroupPreAuth": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/updateCognitoGroupPreAuth-5245394d7846385a7270-build.zip"
+        },
+        "updateConfigurationsAndActualCounts": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/updateConfigurationsAndActualCounts-774a456548414c513551-build.zip"
+        },
+        "updateGrouping": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/updateGrouping-744d5355333774653661-build.zip"
+        },
+        "updateProblemClassification": {
+          "deploymentBucketName": "amplify-erfassungsapp-master-160211-deployment",
+          "s3Key": "amplify-builds/updateProblemClassification-4c506f6830324335716d-build.zip"
+        }
       },
-      "api": {
-        "erfassungsapp": {}
-      }
-    }
-  },
-  "stag": {
-    "categories": {
-      "auth": {
-        "erfassungsapp373264a5": {}
+      "storage": {
+        "images": {}
       }
     }
   }

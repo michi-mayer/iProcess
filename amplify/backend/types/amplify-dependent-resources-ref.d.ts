@@ -9,7 +9,6 @@ export type AmplifyDependentResourcesAttributes = {
     "erfassungsapp373264a5": {
       "AppClientID": "string",
       "AppClientIDWeb": "string",
-      "CreatedSNSRole": "string",
       "IdentityPoolId": "string",
       "IdentityPoolName": "string",
       "UserPoolArn": "string",
@@ -106,6 +105,13 @@ export type AmplifyDependentResourcesAttributes = {
       "Name": "string",
       "Region": "string"
     },
+    "machineResolver": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
     "measureReportResolver": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
@@ -142,6 +148,13 @@ export type AmplifyDependentResourcesAttributes = {
       "Region": "string"
     },
     "unitResolver": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
+    "updateCognitoGroupPreAuth": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",

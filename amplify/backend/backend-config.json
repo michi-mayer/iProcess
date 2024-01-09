@@ -682,6 +682,22 @@
         }
       ]
     },
+    "AMPLIFY_function_machineResolver_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "machineResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_machineResolver_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "machineResolver"
+        }
+      ]
+    },
     "AMPLIFY_function_measureReportResolver_deploymentBucketName": {
       "usedBy": [
         {
@@ -775,6 +791,22 @@
         {
           "category": "function",
           "resourceName": "unitResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_updateCognitoGroupPreAuth_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updateCognitoGroupPreAuth"
+        }
+      ]
+    },
+    "AMPLIFY_function_updateCognitoGroupPreAuth_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updateCognitoGroupPreAuth"
         }
       ]
     },
